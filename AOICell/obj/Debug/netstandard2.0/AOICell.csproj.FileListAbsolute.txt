@@ -1,0 +1,10 @@
+C:\Users\25190\Desktop\course\AOITestProject\AOIServer\AOICell\bin\Debug\netstandard2.0\AOICell.deps.json
+C:\Users\25190\Desktop\course\AOITestProject\AOIServer\AOICell\bin\Debug\netstandard2.0\AOICell.dll
+C:\Users\25190\Desktop\course\AOITestProject\AOIServer\AOICell\bin\Debug\netstandard2.0\AOICell.pdb
+C:\Users\25190\Desktop\course\AOITestProject\AOIServer\AOICell\obj\Debug\netstandard2.0\AOICell.csproj.AssemblyReference.cache
+C:\Users\25190\Desktop\course\AOITestProject\AOIServer\AOICell\obj\Debug\netstandard2.0\AOICell.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\25190\Desktop\course\AOITestProject\AOIServer\AOICell\obj\Debug\netstandard2.0\AOICell.AssemblyInfoInputs.cache
+C:\Users\25190\Desktop\course\AOITestProject\AOIServer\AOICell\obj\Debug\netstandard2.0\AOICell.AssemblyInfo.cs
+C:\Users\25190\Desktop\course\AOITestProject\AOIServer\AOICell\obj\Debug\netstandard2.0\AOICell.csproj.CoreCompileInputs.cache
+C:\Users\25190\Desktop\course\AOITestProject\AOIServer\AOICell\obj\Debug\netstandard2.0\AOICell.dll
+C:\Users\25190\Desktop\course\AOITestProject\AOIServer\AOICell\obj\Debug\netstandard2.0\AOICell.pdb

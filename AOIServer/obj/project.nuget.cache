@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "qKYJiFjzjPY=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\25190\\Desktop\\course\\AOITestProject\\AOIServer\\AOIServer\\AOIServer.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\25190\\.nuget\\packages\\asyncnet\\1.0.0\\asyncnet.1.0.0.nupkg.sha512",
+    "C:\\Users\\25190\\.nuget\\packages\\pelog\\1.0.3\\pelog.1.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

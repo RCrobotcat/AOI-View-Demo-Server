@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.12.35521.163 d17.12
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AOIServer", "AOIServer\AOIServer.csproj", "{942A4489-B05F-4B04-9F71-1A13FE04CDEB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AOICell", "AOICell\AOICell.csproj", "{0A375A34-4F3A-450C-8FBE-FA058F24D9A1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AOIProtocol", "AOIProtocol\AOIProtocol.csproj", "{ADE56C66-4DF8-4CCF-87FF-3CA701E2585C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{942A4489-B05F-4B04-9F71-1A13FE04CDEB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{942A4489-B05F-4B04-9F71-1A13FE04CDEB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{942A4489-B05F-4B04-9F71-1A13FE04CDEB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{942A4489-B05F-4B04-9F71-1A13FE04CDEB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0A375A34-4F3A-450C-8FBE-FA058F24D9A1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0A375A34-4F3A-450C-8FBE-FA058F24D9A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0A375A34-4F3A-450C-8FBE-FA058F24D9A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0A375A34-4F3A-450C-8FBE-FA058F24D9A1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ADE56C66-4DF8-4CCF-87FF-3CA701E2585C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ADE56C66-4DF8-4CCF-87FF-3CA701E2585C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ADE56C66-4DF8-4CCF-87FF-3CA701E2585C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ADE56C66-4DF8-4CCF-87FF-3CA701E2585C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

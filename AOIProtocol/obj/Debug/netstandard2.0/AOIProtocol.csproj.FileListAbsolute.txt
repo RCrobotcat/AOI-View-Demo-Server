@@ -1,0 +1,13 @@
+C:\Users\25190\Desktop\course\AOITestProject\AOIServer\AOIProtocol\bin\Debug\netstandard2.0\AOIProtocol.deps.json
+C:\Users\25190\Desktop\course\AOITestProject\AOIServer\AOIProtocol\bin\Debug\netstandard2.0\AOIProtocol.dll
+C:\Users\25190\Desktop\course\AOITestProject\AOIServer\AOIProtocol\bin\Debug\netstandard2.0\AOIProtocol.pdb
+C:\Users\25190\Desktop\course\AOITestProject\AOIServer\AOIProtocol\obj\Debug\netstandard2.0\AOIProtocol.csproj.AssemblyReference.cache
+C:\Users\25190\Desktop\course\AOITestProject\AOIServer\AOIProtocol\obj\Debug\netstandard2.0\AOIProtocol.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\25190\Desktop\course\AOITestProject\AOIServer\AOIProtocol\obj\Debug\netstandard2.0\AOIProtocol.AssemblyInfoInputs.cache
+C:\Users\25190\Desktop\course\AOITestProject\AOIServer\AOIProtocol\obj\Debug\netstandard2.0\AOIProtocol.AssemblyInfo.cs
+C:\Users\25190\Desktop\course\AOITestProject\AOIServer\AOIProtocol\obj\Debug\netstandard2.0\AOIProtocol.csproj.CoreCompileInputs.cache
+C:\Users\25190\Desktop\course\AOITestProject\AOIServer\AOIProtocol\obj\Debug\netstandard2.0\AOIProtocol.dll
+C:\Users\25190\Desktop\course\AOITestProject\AOIServer\AOIProtocol\obj\Debug\netstandard2.0\AOIProtocol.pdb
+C:\Users\25190\Desktop\course\AOITestProject\AOIClient\Assets\Scripts\Libs\Debug\netstandard2.0\AOIProtocol.deps.json
+C:\Users\25190\Desktop\course\AOITestProject\AOIClient\Assets\Scripts\Libs\Debug\netstandard2.0\AOIProtocol.dll
+C:\Users\25190\Desktop\course\AOITestProject\AOIClient\Assets\Scripts\Libs\Debug\netstandard2.0\AOIProtocol.pdb

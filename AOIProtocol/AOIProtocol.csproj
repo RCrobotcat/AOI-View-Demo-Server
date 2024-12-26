@@ -1,0 +1,12 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <BaseOutputPath>C:\Users\25190\Desktop\course\AOITestProject\AOIClient\Assets\Scripts\Libs</BaseOutputPath>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AsyncNet" Version="1.0.0" />
+  </ItemGroup>
+
+</Project>

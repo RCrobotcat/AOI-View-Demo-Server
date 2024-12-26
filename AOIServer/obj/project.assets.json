@@ -1,0 +1,180 @@
+{
+  "version": 3,
+  "targets": {
+    "net6.0": {
+      "AsyncNet/1.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/AsyncNet.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/AsyncNet.dll": {}
+        }
+      },
+      "PELog/1.0.3": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.1/PELog.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.1/PELog.dll": {}
+        }
+      },
+      "AOICell/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "compile": {
+          "bin/placeholder/AOICell.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/AOICell.dll": {}
+        }
+      },
+      "AOIProtocol/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "AsyncNet": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/AOIProtocol.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/AOIProtocol.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "AsyncNet/1.0.0": {
+      "sha512": "HB/3srIHoyFmUcCDlNZCD2iwF/EGvF9wLpBe11vtAWTtTDvJkppXWBWgN4qTXxlvNlKP48vrT7lHeJJRJfkjTw==",
+      "type": "package",
+      "path": "asyncnet/1.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "asyncnet.1.0.0.nupkg.sha512",
+        "asyncnet.nuspec",
+        "lib/netstandard2.0/AsyncNet.dll",
+        "齐齐课圆形Logo(500x500).png"
+      ]
+    },
+    "PELog/1.0.3": {
+      "sha512": "yjXKXvgaCqcCk+vqtTSPFk9gAxaV0hFvy/kxwmKN3BPqKVSaEE+mKyzqMRlv4QmWg/y8yG2e7bCyXrT9/A4ACw==",
+      "type": "package",
+      "path": "pelog/1.0.3",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netstandard2.1/PELog.dll",
+        "pelog.1.0.3.nupkg.sha512",
+        "pelog.nuspec",
+        "齐齐课圆形Logo(500x500).png"
+      ]
+    },
+    "AOICell/1.0.0": {
+      "type": "project",
+      "path": "../AOICell/AOICell.csproj",
+      "msbuildProject": "../AOICell/AOICell.csproj"
+    },
+    "AOIProtocol/1.0.0": {
+      "type": "project",
+      "path": "../AOIProtocol/AOIProtocol.csproj",
+      "msbuildProject": "../AOIProtocol/AOIProtocol.csproj"
+    }
+  },
+  "projectFileDependencyGroups": {
+    "net6.0": [
+      "AOICell >= 1.0.0",
+      "AOIProtocol >= 1.0.0",
+      "AsyncNet >= 1.0.0",
+      "PELog >= 1.0.3"
+    ]
+  },
+  "packageFolders": {
+    "C:\\Users\\25190\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "C:\\Users\\25190\\Desktop\\course\\AOITestProject\\AOIServer\\AOIServer\\AOIServer.csproj",
+      "projectName": "AOIServer",
+      "projectPath": "C:\\Users\\25190\\Desktop\\course\\AOITestProject\\AOIServer\\AOIServer\\AOIServer.csproj",
+      "packagesPath": "C:\\Users\\25190\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\25190\\Desktop\\course\\AOITestProject\\AOIServer\\AOIServer\\obj\\",
+      "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
+      "configFilePaths": [
+        "C:\\Users\\25190\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+      ],
+      "originalTargetFrameworks": [
+        "net6.0"
+      ],
+      "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "projectReferences": {
+            "C:\\Users\\25190\\Desktop\\course\\AOITestProject\\AOIServer\\AOICell\\AOICell.csproj": {
+              "projectPath": "C:\\Users\\25190\\Desktop\\course\\AOITestProject\\AOIServer\\AOICell\\AOICell.csproj"
+            },
+            "C:\\Users\\25190\\Desktop\\course\\AOITestProject\\AOIServer\\AOIProtocol\\AOIProtocol.csproj": {
+              "projectPath": "C:\\Users\\25190\\Desktop\\course\\AOITestProject\\AOIServer\\AOIProtocol\\AOIProtocol.csproj"
+            }
+          }
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "all"
+      },
+      "SdkAnalysisLevel": "9.0.100"
+    },
+    "frameworks": {
+      "net6.0": {
+        "targetAlias": "net6.0",
+        "dependencies": {
+          "AsyncNet": {
+            "target": "Package",
+            "version": "[1.0.0, )"
+          },
+          "PELog": {
+            "target": "Package",
+            "version": "[1.0.3, )"
+          }
+        },
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48",
+          "net481"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "frameworkReferences": {
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          }
+        },
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.100\\RuntimeIdentifierGraph.json"
+      }
+    }
+  }
+}
