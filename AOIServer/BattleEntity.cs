@@ -1,5 +1,6 @@
 ﻿using AOIProtocol;
 using System.Numerics;
+using AOICell;
 
 namespace AOIServer
 {
@@ -20,6 +21,8 @@ namespace AOIServer
 
         public Vector3 playerTargetDir; // 玩家当前的目标朝向
         public Vector3 playerPos; // 玩家当前位置
+
+        public AOIEntity aOIEntity; // 玩家所在的AOI实体(玩家实体对应的AOI实体)
 
         public void SendMsg(Package package)
         {
