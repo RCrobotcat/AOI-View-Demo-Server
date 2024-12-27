@@ -61,5 +61,13 @@ namespace AOICell
         {
             // TODO
         }
+
+        /// <summary>
+        /// 驱动整体AOI更新
+        /// </summary>
+        public void CalculateAOIUpdate()
+        {
+
+        }
     }
 }

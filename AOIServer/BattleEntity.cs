@@ -28,5 +28,29 @@ namespace AOIServer
         {
             session?.SendMsg(package);
         }
+
+        /// <summary>
+        /// 当前实体进入关卡的回调
+        /// </summary>
+        public void OnEnterStage(BattleStage stage)
+        {
+
+        }
+
+        /// <summary>
+        /// 当前实体在关卡中更新的回调
+        /// </summary>
+        public void OnUpdateStage(Package package)
+        {
+
+        }
+
+        /// <summary>
+        /// 当前实体离开关卡的回调
+        /// </summary>
+        public void OnExitStage()
+        {
+
+        }
     }
 }
