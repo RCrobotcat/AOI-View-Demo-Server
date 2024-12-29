@@ -97,9 +97,13 @@ namespace AOIServer
         }
         public void UnInitStage()
         {
+            entityDic.Clear();
             operationEnterQueue.Clear();
             operationExitQueue.Clear();
             operationMoveQueue.Clear();
+
+            stageConfig = null;
+            aOIManager = null;
         }
 
         /// <summary>

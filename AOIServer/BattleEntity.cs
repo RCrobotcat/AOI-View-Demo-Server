@@ -34,7 +34,8 @@ namespace AOIServer
         /// </summary>
         public void OnEnterStage(BattleStage stage)
         {
-
+            playerState = PlayerStateEnum.Online;
+            this.LogCyan($"Player(entityID: {entityID}) Online! Enter Stage:{stage.stageConfig.stageID}.");
         }
 
         /// <summary>
@@ -42,7 +43,10 @@ namespace AOIServer
         /// </summary>
         public void OnUpdateStage(Package package)
         {
-
+            if (playerState == PlayerStateEnum.Online)
+            {
+                SendMsg(package);
+            }
         }
 
         /// <summary>
@@ -50,7 +54,8 @@ namespace AOIServer
         /// </summary>
         public void OnExitStage()
         {
-
+            playerState = PlayerStateEnum.Offline;
+            this.LogYellow($"Player(entityID: {entityID}) Offline!");
         }
     }
 }

@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("AOICell")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6fe0095352251d9fd2d579c4bc77d34b60a5e1fa")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1c6a76b0ee14ad948f89efd84f73817a3c96ba3a")]
 [assembly: System.Reflection.AssemblyProductAttribute("AOICell")]
 [assembly: System.Reflection.AssemblyTitleAttribute("AOICell")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

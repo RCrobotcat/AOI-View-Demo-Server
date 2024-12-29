@@ -25,6 +25,15 @@
         "build": {
           "build/netstandard2.0/NETStandard.Library.targets": {}
         }
+      },
+      "PELog/1.0.2": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/PELog.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/PELog.dll": {}
+        }
       }
     }
   },
@@ -172,11 +181,25 @@
         "netstandard.library.2.0.3.nupkg.sha512",
         "netstandard.library.nuspec"
       ]
+    },
+    "PELog/1.0.2": {
+      "sha512": "EuLHwdjpjDqglFenXCADkANqhFEUKLayMcjjcz1+o1VawqTsOVCXYHZJ9GMv51KrD8kyjrTlIOoqMHSm/YLXDA==",
+      "type": "package",
+      "path": "pelog/1.0.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netstandard2.0/PELog.dll",
+        "pelog.1.0.2.nupkg.sha512",
+        "pelog.nuspec",
+        "齐齐课圆形Logo(500x500).png"
+      ]
     }
   },
   "projectFileDependencyGroups": {
     ".NETStandard,Version=v2.0": [
-      "NETStandard.Library >= 2.0.3"
+      "NETStandard.Library >= 2.0.3",
+      "PELog >= 1.0.2"
     ]
   },
   "packageFolders": {
@@ -234,6 +257,10 @@
             "target": "Package",
             "version": "[2.0.3, )",
             "autoReferenced": true
+          },
+          "PELog": {
+            "target": "Package",
+            "version": "[1.0.2, )"
           }
         },
         "imports": [
