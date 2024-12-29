@@ -16,7 +16,7 @@ namespace AOICell
 
     public class AOIEntity
     {
-        public int entityID; // 实体ID
+        public uint entityID; // 实体ID
         public AOIManager aoiManager;
 
         // 当前实体所在的宫格的xz索引
@@ -41,7 +41,9 @@ namespace AOICell
         private EntityOperationEnum operationEnum;
         public EntityOperationEnum EntityOperation { get => operationEnum; }
 
-        public AOIEntity(int entityID, AOIManager aoiManager)
+        AOICell[] aroundAddCell = null; // 存量视野周围新增的宫格
+
+        public AOIEntity(uint entityID, AOIManager aoiManager)
         {
             this.entityID = entityID;
             this.aoiManager = aoiManager;
@@ -83,6 +85,14 @@ namespace AOICell
                 operationEnum = EntityOperationEnum.MoveInside;
                 aoiManager.MoveInsideCell(this);
             }
+        }
+
+        /// <summary>
+        /// 保存存量视野增加的九宫格
+        /// </summary>
+        public void AddAroundCellView(AOICell[] aroundCells)
+        {
+            this.aroundAddCell = aroundCells;
         }
     }
 }

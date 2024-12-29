@@ -18,6 +18,11 @@ namespace AOICell
 
         public int cellSize = 20; // 单元格大小
         public int initCount = 200; // 初始化数量
+
+        // 各个更新的数量
+        public int updateEnterAmount = 10;
+        public int updateMoveAmount = 50;
+        public int updateExitAmount = 10;
     }
 
     public class AOIManager
@@ -51,24 +56,36 @@ namespace AOICell
         /// <param name="z">位置z</param>
         public AOIEntity EnterCell(uint entityID, float x, float z)
         {
-            // TODO
-            return null;
+            AOIEntity aoiEntity = new AOIEntity(entityID, this);
+            aoiEntity.UpdatePosition(x, z, EntityOperationEnum.TransferEnter);
+            aoiEntityList.Add(aoiEntity);
+            return aoiEntity;
         }
-
         /// <summary>
         /// 更新实体Entity位置
         /// </summary>
         public void UpdateEntityPosition(AOIEntity aoiEntity, float x, float z)
         {
-            // TODO
+            aoiEntity.UpdatePosition(x, z);
         }
-
         /// <summary>
         /// 实体Entity离开AOI宫格
         /// </summary>
         public void ExitCell(AOIEntity aoiEntity)
         {
-            // TODO
+            if (aoiCellDic.TryGetValue(aoiEntity.cellKey, out AOICell cell))
+            {
+                cell.ExitCell(aoiEntity);
+            }
+            else
+            {
+                this.LogYellow($"aoiCellDic cannot find cell: {aoiEntity.cellKey}!");
+            }
+
+            if (!aoiEntityList.Remove(aoiEntity))
+            {
+                this.LogYellow($"aoiEntityList cannot find entity: {aoiEntity.entityID}");
+            }
         }
 
         /// <summary>
