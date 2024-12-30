@@ -8,6 +8,14 @@ namespace AOICell
         public List<MoveItem> moveItemsList;
         public List<ExitItem> exitItemsList;
 
+        public bool IsEmpty
+        {
+            get
+            {
+                return enterItemsList.Count == 0 && moveItemsList.Count == 0 && exitItemsList.Count == 0;
+            }
+        }
+
         public UpdateItem(int enterAmount, int moveAmount, int exitAmount)
         {
             this.enterItemsList = new List<EnterItem>(enterAmount);

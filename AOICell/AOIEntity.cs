@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 // AOI实体
 namespace AOICell
@@ -43,10 +44,16 @@ namespace AOICell
 
         AOICell[] aroundAddCell = null; // 存量视野周围新增的宫格
 
+        private UpdateItem entityUpdateItem; // 更新项
+
         public AOIEntity(uint entityID, AOIManager aoiManager)
         {
             this.entityID = entityID;
             this.aoiManager = aoiManager;
+
+            entityUpdateItem = new UpdateItem(aoiManager.AOICfg.updateEnterAmount,
+                aoiManager.AOICfg.updateMoveAmount,
+                aoiManager.AOICfg.updateExitAmount);
         }
 
         /// <summary>
@@ -93,6 +100,31 @@ namespace AOICell
         public void AddAroundCellView(AOICell[] aroundCells)
         {
             this.aroundAddCell = aroundCells;
+        }
+
+        /// <summary>
+        /// 计算实体视野变化
+        /// 存量增删
+        /// </summary>
+        public void CalculateEntityCellViewChange()
+        {
+            if (aroundAddCell != null)
+            {
+                for (int i = 0; i < aroundAddCell.Length; i++)
+                {
+                    HashSet<AOIEntity> entities = aroundAddCell[i].aOIEntities;
+                    foreach (var e in entities)
+                    {
+                        entityUpdateItem.enterItemsList.Add(new EnterItem(e.entityID, e.PoxX, e.PosZ));
+                    }
+                }
+
+                if (!entityUpdateItem.IsEmpty)
+                {
+                    aoiManager.OnEntityCellViewChange?.Invoke(this, entityUpdateItem);
+                    entityUpdateItem.Reset();
+                }
+            }
         }
     }
 }

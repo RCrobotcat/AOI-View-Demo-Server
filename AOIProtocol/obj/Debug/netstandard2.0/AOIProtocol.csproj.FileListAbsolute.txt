@@ -11,3 +11,4 @@ C:\Users\25190\Desktop\course\AOITestProject\AOIServer\AOIProtocol\obj\Debug\net
 C:\Users\25190\Desktop\course\AOITestProject\AOIClient\Assets\Scripts\Libs\Debug\netstandard2.0\AOIProtocol.deps.json
 C:\Users\25190\Desktop\course\AOITestProject\AOIClient\Assets\Scripts\Libs\Debug\netstandard2.0\AOIProtocol.dll
 C:\Users\25190\Desktop\course\AOITestProject\AOIClient\Assets\Scripts\Libs\Debug\netstandard2.0\AOIProtocol.pdb
+C:\Users\25190\Desktop\course\AOITestProject\AOIServer\AOIProtocol\obj\Debug\netstandard2.0\AOIProtocol.sourcelink.json

@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 /*
  * 特点:
@@ -36,6 +37,8 @@ namespace AOICell
 
         private Dictionary<string, AOICell> aoiCellDic; // 所有的AOI宫格
         private List<AOIEntity> aoiEntityList; // 所有的AOI实体
+
+        public Action<AOIEntity, UpdateItem> OnEntityCellViewChange; // 实体视野变化回调
 
         public AOIManager(AOIConfig config)
         {

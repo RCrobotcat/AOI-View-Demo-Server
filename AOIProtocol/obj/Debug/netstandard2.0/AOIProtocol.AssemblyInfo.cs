@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("AOIProtocol")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6fe0095352251d9fd2d579c4bc77d34b60a5e1fa")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e99aa1d6361a03e730e270f653adfaa42c6a0b20")]
 [assembly: System.Reflection.AssemblyProductAttribute("AOIProtocol")]
 [assembly: System.Reflection.AssemblyTitleAttribute("AOIProtocol")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

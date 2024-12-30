@@ -1,8 +1,6 @@
-﻿
+﻿using System.Collections.Generic;
 
 // AOI单元(宫格)
-using System.Linq;
-
 namespace AOICell
 {
     public class AOICell
@@ -15,6 +13,8 @@ namespace AOICell
         public bool isCalculateBoundaries = false; // 是否已经计算了边界
 
         public UpdateItem cellUpdateItem; // Cell所有的更新
+
+        public HashSet<AOIEntity> aOIEntities = new HashSet<AOIEntity>(); // 当前宫格内的所有实体
 
         public AOICell(int xIndex, int zIndex, AOIManager aoiManager)
         {
