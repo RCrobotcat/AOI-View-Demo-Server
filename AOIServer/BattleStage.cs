@@ -45,7 +45,10 @@ namespace AOIServer
                 initCount = stageConfig.initCount
             };
 
-            aOIManager = new AOIManager(aoiConfig);
+            aOIManager = new AOIManager(aoiConfig)
+            {
+                OnEntityCellViewChange = EntityCellViewChange
+            };
 
             this.LogYellow($"Init Stage:{stageID} done!");
         }
@@ -144,6 +147,57 @@ namespace AOIServer
             else
             {
                 this.Warn($"ExitStage entityID:{entity.entityID} not exists in stage:{stageConfig.stageName}(stageID:{stageConfig.stageID})!");
+            }
+        }
+
+        /// <summary>
+        /// 应用层中AOI实体的视野变化回调
+        /// </summary>
+        void EntityCellViewChange(AOIEntity aOIEntity, UpdateItem item)
+        {
+            Package pkg = new Package
+            {
+                cmd = CMD.NtfAOIMsg,
+                ntfAOIMsg = new NtfAOIMsg
+                {
+                    enterLst = new List<EnterMsg>(),
+                    exitLst = new List<ExitMsg>()
+                }
+            };
+
+            // 将Enter更新写入网络协议消息包
+            if (item.enterItemsList.Count > 0)
+            {
+                for (int i = 0; i < item.enterItemsList.Count; i++)
+                {
+                    pkg.ntfAOIMsg.enterLst.Add(new EnterMsg
+                    {
+                        entityID = item.enterItemsList[i].id,
+                        PosX = item.enterItemsList[i].x,
+                        PosZ = item.enterItemsList[i].z
+                    });
+
+                    this.LogGreen($"AOIEntity: {item.enterItemsList[i].id} enter, x: {item.enterItemsList[i].x}, z: {item.enterItemsList[i].z}");
+                }
+            }
+
+            // 将Exit更新写入网络协议消息包
+            if (item.exitItemsList.Count > 0)
+            {
+                for (int i = 0; i < item.exitItemsList.Count; i++)
+                {
+                    pkg.ntfAOIMsg.exitLst.Add(new ExitMsg
+                    {
+                        entityID = item.exitItemsList[i].id,
+                    });
+
+                    this.LogYellow($"AOIEntity: {item.exitItemsList[i].id} exit.");
+                }
+            }
+
+            if (entityDic.TryGetValue(aOIEntity.entityID, out BattleEntity battleEntity))
+            {
+                battleEntity.OnUpdateStage(pkg);
             }
         }
     }

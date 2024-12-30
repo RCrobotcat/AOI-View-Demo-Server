@@ -30,8 +30,22 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 4,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "AOIEntity.cs",
+              "DocumentMoniker": "C:\\Users\\25190\\Desktop\\course\\AOITestProject\\AOIServer\\AOICell\\AOIEntity.cs",
+              "RelativeDocumentMoniker": "AOICell\\AOIEntity.cs",
+              "ToolTip": "C:\\Users\\25190\\Desktop\\course\\AOITestProject\\AOIServer\\AOICell\\AOIEntity.cs",
+              "RelativeToolTip": "AOICell\\AOIEntity.cs",
+              "ViewState": "AgIAAGoAAAAAAAAAAAAwwDUAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-29T06:07:28.593Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
             {
               "$type": "Document",
               "DocumentIndex": 3,
@@ -40,7 +54,7 @@
               "RelativeDocumentMoniker": "AOICell\\AOIManager.cs",
               "ToolTip": "C:\\Users\\25190\\Desktop\\course\\AOITestProject\\AOIServer\\AOICell\\AOIManager.cs",
               "RelativeToolTip": "AOICell\\AOIManager.cs",
-              "ViewState": "AgIAAHIAAAAAAAAAAAAmwGAAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAHsAAAAAAAAAAAAqwB8AAAAxAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-29T06:07:29.091Z",
               "IsPinned": true,
@@ -54,7 +68,7 @@
               "RelativeDocumentMoniker": "AOICell\\AOICell.cs",
               "ToolTip": "C:\\Users\\25190\\Desktop\\course\\AOITestProject\\AOIServer\\AOICell\\AOICell.cs",
               "RelativeToolTip": "AOICell\\AOICell.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAADYAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAGMAAAAAAAAAAAAowAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-29T06:07:31.801Z",
               "IsPinned": true,
@@ -68,7 +82,7 @@
               "RelativeDocumentMoniker": "AOICell\\UpdateItem.cs",
               "ToolTip": "C:\\Users\\25190\\Desktop\\course\\AOITestProject\\AOIServer\\AOICell\\UpdateItem.cs",
               "RelativeToolTip": "AOICell\\UpdateItem.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAEIAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAACgAAAAAAAAAAAAkwAsAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-29T09:10:17.134Z",
               "EditorCaption": ""
@@ -81,22 +95,10 @@
               "RelativeDocumentMoniker": "AOIProtocol\\Package.cs",
               "ToolTip": "C:\\Users\\25190\\Desktop\\course\\AOITestProject\\AOIServer\\AOIProtocol\\Package.cs",
               "RelativeToolTip": "AOIProtocol\\Package.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAdAAAAAAAAAA==",
+              "ViewState": "AgIAAD0AAAAAAAAAAAAkwBYAAAAqAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-29T07:15:44.141Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "AOIEntity.cs",
-              "DocumentMoniker": "C:\\Users\\25190\\Desktop\\course\\AOITestProject\\AOIServer\\AOICell\\AOIEntity.cs",
-              "RelativeDocumentMoniker": "AOICell\\AOIEntity.cs",
-              "ToolTip": "C:\\Users\\25190\\Desktop\\course\\AOITestProject\\AOIServer\\AOICell\\AOIEntity.cs",
-              "RelativeToolTip": "AOICell\\AOIEntity.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAADYAAAAUAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-29T06:07:28.593Z"
             }
           ]
         }
