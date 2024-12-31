@@ -1,5 +1,6 @@
-﻿using AOICell;
+﻿using AOICellSpace;
 using AOIProtocol;
+using PENet;
 using System.Collections.Concurrent;
 
 // 游戏关卡类
@@ -47,7 +48,8 @@ namespace AOIServer
 
             aOIManager = new AOIManager(aoiConfig)
             {
-                OnEntityCellViewChange = EntityCellViewChange
+                OnEntityCellViewChange = EntityCellViewChange,
+                OnCellViewEntityOperationCombination = CellViewEntityOperationCombination
             };
 
             this.LogYellow($"Init Stage:{stageID} done!");
@@ -152,6 +154,7 @@ namespace AOIServer
 
         /// <summary>
         /// 应用层中AOI实体的视野变化回调
+        /// 针对于一个实体而言
         /// </summary>
         void EntityCellViewChange(AOIEntity aOIEntity, UpdateItem item)
         {
@@ -198,6 +201,68 @@ namespace AOIServer
             if (entityDic.TryGetValue(aOIEntity.entityID, out BattleEntity battleEntity))
             {
                 battleEntity.OnUpdateStage(pkg);
+            }
+        }
+
+        /// <summary>
+        /// 应用层中AOI宫格内实体操作合并回调
+        /// 针对于一个宫格而言
+        /// </summary>
+        void CellViewEntityOperationCombination(AOICell cell, UpdateItem item)
+        {
+            Package pkg = new Package
+            {
+                cmd = CMD.NtfAOIMsg,
+                ntfAOIMsg = new NtfAOIMsg
+                {
+                    enterLst = new List<EnterMsg>(),
+                    exitLst = new List<ExitMsg>(),
+                    moveLst = new List<MoveMsg>()
+                }
+            };
+
+            if (item.enterItemsList.Count > 0)
+            {
+                for (int i = 0; i < item.enterItemsList.Count; i++)
+                {
+                    pkg.ntfAOIMsg.enterLst.Add(new EnterMsg
+                    {
+                        entityID = item.enterItemsList[i].id,
+                        PosX = item.enterItemsList[i].x,
+                        PosZ = item.enterItemsList[i].z
+                    });
+                    this.Log($"AOIEntity: {item.enterItemsList[i].id} enter Cell: {cell.xIndex}_{cell.zIndex}, x: {item.enterItemsList[i].x}, z: {item.enterItemsList[i].z}");
+                }
+            }
+            if (item.moveItemsList.Count > 0)
+            {
+                for (int i = 0; i < item.moveItemsList.Count; i++)
+                {
+                    pkg.ntfAOIMsg.moveLst.Add(new MoveMsg
+                    {
+                        entityID = item.moveItemsList[i].id,
+                        PosX = item.moveItemsList[i].x,
+                        PosZ = item.moveItemsList[i].z
+                    });
+                }
+            }
+            if (item.exitItemsList.Count > 0)
+            {
+                for (int i = 0; i < item.exitItemsList.Count; i++)
+                {
+                    pkg.ntfAOIMsg.exitLst.Add(new ExitMsg
+                    {
+                        entityID = item.exitItemsList[i].id
+                    });
+                }
+            }
+
+            foreach (var e in cell.aOIEntities)
+            {
+                if (entityDic.TryGetValue(e.entityID, out BattleEntity entity))
+                {
+                    entity.OnUpdateStage(pkg);
+                }
             }
         }
     }

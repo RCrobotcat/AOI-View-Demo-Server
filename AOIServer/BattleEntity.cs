@@ -1,6 +1,6 @@
 ﻿using AOIProtocol;
 using System.Numerics;
-using AOICell;
+using AOICellSpace;
 
 namespace AOIServer
 {

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 
 // AOI实体
-namespace AOICell
+namespace AOICellSpace
 {
     public enum EntityOperationEnum
     {

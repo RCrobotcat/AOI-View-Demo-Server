@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 
 // AOI单元(宫格)
-namespace AOICell
+namespace AOICellSpace
 {
     public class AOICell
     {
@@ -103,6 +103,18 @@ namespace AOICell
                     break;
                 default:
                     break;
+            }
+        }
+
+        /// <summary>
+        /// 计算AOICell内所有实体的操作合并
+        /// </summary>
+        public void CalculateCellViewEntityOperationCombination()
+        {
+            if (!cellUpdateItem.IsEmpty)
+            {
+                aoiManager.OnCellViewEntityOperationCombination?.Invoke(this, cellUpdateItem);
+                cellUpdateItem.Reset();
             }
         }
     }

@@ -11,7 +11,7 @@ using System.Collections.Generic;
  */
 
 // AOI管理器
-namespace AOICell
+namespace AOICellSpace
 {
     public class AOIConfig
     {
@@ -39,6 +39,7 @@ namespace AOICell
         private List<AOIEntity> aoiEntityList; // 所有的AOI实体
 
         public Action<AOIEntity, UpdateItem> OnEntityCellViewChange; // 实体视野变化回调
+        public Action<AOICell, UpdateItem> OnCellViewEntityOperationCombination; // 宫格内视野中实体变化操作合并的回调
 
         public AOIManager(AOIConfig config)
         {
@@ -96,7 +97,10 @@ namespace AOICell
         /// </summary>
         public void CalculateAOIUpdate()
         {
-
+            for (int i = 0; i < aoiEntityList.Count; i++)
+            {
+                aoiEntityList[i].CalculateEntityCellViewChange();
+            }
         }
 
         /// <summary>
