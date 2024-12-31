@@ -97,9 +97,24 @@ namespace AOICellSpace
         /// </summary>
         public void CalculateAOIUpdate()
         {
+            // 计算实体视野变化
             for (int i = 0; i < aoiEntityList.Count; i++)
             {
                 aoiEntityList[i].CalculateEntityCellViewChange();
+            }
+
+            // 计算宫格内部视野中实体变化操作合并
+            foreach (var item in aoiCellDic)
+            {
+                AOICell cell = item.Value;
+
+                if (cell.aOIEntitiesEnterSet.Count > 0)
+                {
+                    cell.aOIEntitiesSet.UnionWith(cell.aOIEntitiesEnterSet);
+                    cell.aOIEntitiesEnterSet.Clear();
+                }
+
+                cell.CalculateCellViewEntityOperationCombination();
             }
         }
 

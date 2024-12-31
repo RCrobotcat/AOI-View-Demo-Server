@@ -112,7 +112,7 @@ namespace AOICellSpace
             {
                 for (int i = 0; i < aroundAddCell.Length; i++)
                 {
-                    HashSet<AOIEntity> entities = aroundAddCell[i].aOIEntities;
+                    HashSet<AOIEntity> entities = aroundAddCell[i].aOIEntitiesSet;
                     foreach (var e in entities)
                     {
                         entityUpdateItem.enterItemsList.Add(new EnterItem(e.entityID, e.PoxX, e.PosZ));
@@ -125,6 +125,8 @@ namespace AOICellSpace
                     entityUpdateItem.Reset();
                 }
             }
+
+            aroundAddCell = null;
         }
     }
 }

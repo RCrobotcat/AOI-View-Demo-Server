@@ -20,3 +20,4 @@ C:\Users\25190\Desktop\course\AOITestProject\AOIServer\AOIServer\obj\Debug\net6.
 C:\Users\25190\Desktop\course\AOITestProject\AOIServer\AOIServer\obj\Debug\net6.0\AOIServer.genruntimeconfig.cache
 C:\Users\25190\Desktop\course\AOITestProject\AOIServer\AOIServer\obj\Debug\net6.0\ref\AOIServer.dll
 C:\Users\25190\Desktop\course\AOITestProject\AOIServer\AOIServer\bin\Debug\net6.0\AsyncNet.dll
+C:\Users\25190\Desktop\course\AOITestProject\AOIServer\AOIServer\obj\Debug\net6.0\AOIServer.sourcelink.json

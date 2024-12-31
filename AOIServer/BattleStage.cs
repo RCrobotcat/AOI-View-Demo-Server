@@ -221,6 +221,7 @@ namespace AOIServer
                 }
             };
 
+            // 将Enter更新写入网络协议消息包
             if (item.enterItemsList.Count > 0)
             {
                 for (int i = 0; i < item.enterItemsList.Count; i++)
@@ -234,6 +235,8 @@ namespace AOIServer
                     this.Log($"AOIEntity: {item.enterItemsList[i].id} enter Cell: {cell.xIndex}_{cell.zIndex}, x: {item.enterItemsList[i].x}, z: {item.enterItemsList[i].z}");
                 }
             }
+
+            // 将Move更新写入网络协议消息包
             if (item.moveItemsList.Count > 0)
             {
                 for (int i = 0; i < item.moveItemsList.Count; i++)
@@ -246,6 +249,8 @@ namespace AOIServer
                     });
                 }
             }
+
+            // 将Exit更新写入网络协议消息包
             if (item.exitItemsList.Count > 0)
             {
                 for (int i = 0; i < item.exitItemsList.Count; i++)
@@ -257,7 +262,7 @@ namespace AOIServer
                 }
             }
 
-            foreach (var e in cell.aOIEntities)
+            foreach (var e in cell.aOIEntitiesSet)
             {
                 if (entityDic.TryGetValue(e.entityID, out BattleEntity entity))
                 {

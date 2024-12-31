@@ -14,7 +14,8 @@ namespace AOICellSpace
 
         public UpdateItem cellUpdateItem; // Cell所有的更新
 
-        public HashSet<AOIEntity> aOIEntities = new HashSet<AOIEntity>(); // 当前宫格内的所有实体
+        public HashSet<AOIEntity> aOIEntitiesSet = new HashSet<AOIEntity>(); // 当前宫格内的所有实体
+        public HashSet<AOIEntity> aOIEntitiesEnterSet = new HashSet<AOIEntity>(); // 当前宫格内的所有新进入的实体(缓存)
 
         public AOICell(int xIndex, int zIndex, AOIManager aoiManager)
         {
@@ -33,6 +34,12 @@ namespace AOICellSpace
         /// </summary>
         public void EnterCell(AOIEntity aOIEntity)
         {
+            if (!aOIEntitiesEnterSet.Add(aOIEntity))
+            {
+                this.Error($"AOICell: {aOIEntity.cellKey} EnterCell error! Entity: {aOIEntity.entityID} already enter cell!");
+                return;
+            }
+
             if (aOIEntity.EntityOperation == EntityOperationEnum.TransferEnter)
             {
                 aOIEntity.AddAroundCellView(aroundCells);

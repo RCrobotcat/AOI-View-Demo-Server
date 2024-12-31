@@ -1,3 +1,48 @@
-[L]# 16:28:12-142  Tid:6 >> Init Stage:101 done!
-[L]# 16:28:17-715  Tid:8 >> New Client Online: True.
-[L]# 16:28:18-803  Tid:8 >> Receive Msg from Client: LoginRequest.
+[L]# 13:10:06-113  Tid:9 >> Init Stage:101 done!
+[L]# 13:10:11-149  Tid:8 >> New Client Online: True.
+[L]# 13:10:12-928  Tid:8 >> Receive Msg from Client: LoginRequest.
+[L]# 13:10:12-935  Tid:9 >> Entity: 1001 is entering stage...
+[L]# 13:10:12-936  Tid:9 >> EnterStage entityID:1001 success!
+[L]# 13:10:12-945  Tid:9 >> Player(entityID: 1001) Online! Enter Stage:101.
+[L]# 13:10:12-948  Tid:9 >> AOIEntity: 1001 enter Cell: 0_0, x: 10, z: 10
+[L]# 13:10:12-950  Tid:9 >> AOIEntity: 1001 enter Cell: -1_-1, x: 10, z: 10
+[L]# 13:10:12-950  Tid:9 >> AOIEntity: 1001 enter Cell: -1_0, x: 10, z: 10
+[L]# 13:10:12-951  Tid:9 >> AOIEntity: 1001 enter Cell: -1_1, x: 10, z: 10
+[L]# 13:10:12-951  Tid:9 >> AOIEntity: 1001 enter Cell: 0_-1, x: 10, z: 10
+[L]# 13:10:12-951  Tid:9 >> AOIEntity: 1001 enter Cell: 0_1, x: 10, z: 10
+[L]# 13:10:12-951  Tid:9 >> AOIEntity: 1001 enter Cell: 1_-1, x: 10, z: 10
+[L]# 13:10:12-951  Tid:9 >> AOIEntity: 1001 enter Cell: 1_0, x: 10, z: 10
+[L]# 13:10:12-951  Tid:9 >> AOIEntity: 1001 enter Cell: 1_1, x: 10, z: 10
+[L]# 13:10:18-170  Tid:8 >> Cliend Offline.
+[L]# 13:10:19-572  Tid:8 >> New Client Online: True.
+[L]# 13:10:34-442  Tid:8 >> Receive Msg from Client: LoginRequest.
+[L]# 13:10:34-450  Tid:9 >> Entity: 1002 is entering stage...
+[L]# 13:10:34-450  Tid:9 >> EnterStage entityID:1002 success!
+[L]# 13:10:34-451  Tid:9 >> Player(entityID: 1002) Online! Enter Stage:101.
+[L]# 13:10:34-451  Tid:9 >> AOIEntity: 1001 enter, x: 10, z: 10
+[L]# 13:10:34-452  Tid:9 >> AOIEntity: 1002 enter Cell: 0_0, x: 10, z: 10
+[L]# 13:10:34-453  Tid:9 >> AOIEntity: 1002 enter Cell: -1_-1, x: 10, z: 10
+[L]# 13:10:34-453  Tid:9 >> AOIEntity: 1002 enter Cell: -1_0, x: 10, z: 10
+[L]# 13:10:34-453  Tid:9 >> AOIEntity: 1002 enter Cell: -1_1, x: 10, z: 10
+[L]# 13:10:34-453  Tid:9 >> AOIEntity: 1002 enter Cell: 0_-1, x: 10, z: 10
+[L]# 13:10:34-453  Tid:9 >> AOIEntity: 1002 enter Cell: 0_1, x: 10, z: 10
+[L]# 13:10:34-453  Tid:9 >> AOIEntity: 1002 enter Cell: 1_-1, x: 10, z: 10
+[L]# 13:10:34-454  Tid:9 >> AOIEntity: 1002 enter Cell: 1_0, x: 10, z: 10
+[L]# 13:10:34-454  Tid:9 >> AOIEntity: 1002 enter Cell: 1_1, x: 10, z: 10
+[L]# 13:24:34-083  Tid:8 >> Cliend Offline.
+[L]# 13:24:35-488  Tid:8 >> New Client Online: True.
+[L]# 13:24:35-982  Tid:8 >> Receive Msg from Client: LoginRequest.
+[L]# 13:24:35-992  Tid:9 >> Entity: 1003 is entering stage...
+[L]# 13:24:35-992  Tid:9 >> EnterStage entityID:1003 success!
+[L]# 13:24:35-992  Tid:9 >> Player(entityID: 1003) Online! Enter Stage:101.
+[L]# 13:24:35-992  Tid:9 >> AOIEntity: 1001 enter, x: 10, z: 10
+[L]# 13:24:35-993  Tid:9 >> AOIEntity: 1002 enter, x: 10, z: 10
+[L]# 13:24:35-993  Tid:9 >> AOIEntity: 1003 enter Cell: 0_0, x: 10, z: 10
+[L]# 13:24:35-994  Tid:9 >> AOIEntity: 1003 enter Cell: -1_-1, x: 10, z: 10
+[L]# 13:24:35-994  Tid:9 >> AOIEntity: 1003 enter Cell: -1_0, x: 10, z: 10
+[L]# 13:24:35-994  Tid:9 >> AOIEntity: 1003 enter Cell: -1_1, x: 10, z: 10
+[L]# 13:24:35-994  Tid:9 >> AOIEntity: 1003 enter Cell: 0_-1, x: 10, z: 10
+[L]# 13:24:35-994  Tid:9 >> AOIEntity: 1003 enter Cell: 0_1, x: 10, z: 10
+[L]# 13:24:35-994  Tid:9 >> AOIEntity: 1003 enter Cell: 1_-1, x: 10, z: 10
+[L]# 13:24:35-994  Tid:9 >> AOIEntity: 1003 enter Cell: 1_0, x: 10, z: 10
+[L]# 13:24:35-994  Tid:9 >> AOIEntity: 1003 enter Cell: 1_1, x: 10, z: 10

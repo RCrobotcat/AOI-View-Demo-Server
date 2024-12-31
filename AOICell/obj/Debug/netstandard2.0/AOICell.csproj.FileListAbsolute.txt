@@ -8,3 +8,4 @@ C:\Users\25190\Desktop\course\AOITestProject\AOIServer\AOICell\obj\Debug\netstan
 C:\Users\25190\Desktop\course\AOITestProject\AOIServer\AOICell\obj\Debug\netstandard2.0\AOICell.csproj.CoreCompileInputs.cache
 C:\Users\25190\Desktop\course\AOITestProject\AOIServer\AOICell\obj\Debug\netstandard2.0\AOICell.dll
 C:\Users\25190\Desktop\course\AOITestProject\AOIServer\AOICell\obj\Debug\netstandard2.0\AOICell.pdb
+C:\Users\25190\Desktop\course\AOITestProject\AOIServer\AOICell\obj\Debug\netstandard2.0\AOICell.sourcelink.json

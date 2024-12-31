@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("AOIServer")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+99e0c01f17b42c651b72f01a66f594b057df3d17")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+307b66f4bec3e3528880c938cf8b3c7b5b2c3631")]
 [assembly: System.Reflection.AssemblyProductAttribute("AOIServer")]
 [assembly: System.Reflection.AssemblyTitleAttribute("AOIServer")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
