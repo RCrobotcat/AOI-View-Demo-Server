@@ -1,7 +1,7 @@
 ﻿using AOICellSpace;
 using AOIProtocol;
-using PENet;
 using System.Collections.Concurrent;
+using System.Numerics;
 
 // 游戏关卡类
 namespace AOIServer
@@ -74,7 +74,7 @@ namespace AOIServer
             // 处理进入关卡队列
             while (operationEnterQueue.TryDequeue(out BattleEntity entity))
             {
-                entity.aOIEntity = aOIManager.EnterCell(entity.entityID, entity.playerPos.X, entity.playerPos.Z);
+                entity.aOIEntity = aOIManager.EnterCell(entity.entityID, entity.playerInitPos.X, entity.playerInitPos.Z);
                 if (!entityDic.ContainsKey(entity.entityID))
                 {
                     if (entityDic.TryAdd(entity.entityID, entity))
@@ -95,7 +95,7 @@ namespace AOIServer
             // 处理移动队列
             while (operationMoveQueue.TryDequeue(out BattleEntity entity))
             {
-                aOIManager.UpdateEntityPosition(entity.aOIEntity, entity.playerPos.X, entity.playerPos.Z);
+                aOIManager.UpdateEntityPosition(entity.aOIEntity, entity.playerTargetDirPos.X, entity.playerTargetDirPos.Z);
             }
 
             aOIManager.CalculateAOIUpdate(); // 驱动AOI
@@ -133,7 +133,14 @@ namespace AOIServer
         /// </summary>
         public void UpdateStage(BattleEntity entity)
         {
-
+            if (entityDic.ContainsKey(entity.entityID))
+            {
+                operationMoveQueue.Enqueue(entity);
+            }
+            else
+            {
+                this.Warn($"UpdateStage entityID:{entity.entityID} not exists in stage:{stageConfig.stageName}(stageID:{stageConfig.stageID})!");
+            }
         }
 
         /// <summary>
@@ -268,6 +275,29 @@ namespace AOIServer
                 {
                     entity.OnUpdateStage(pkg);
                 }
+            }
+        }
+
+        /// <summary>
+        /// 移动实体
+        /// </summary>
+        public void MoveEntity(SendMovePos sendMovePosRequest)
+        {
+            if (entityDic.TryGetValue(sendMovePosRequest.entityID, out BattleEntity entity))
+            {
+                entity.playerTargetDirPos = new Vector3(sendMovePosRequest.PosX, 0, sendMovePosRequest.PosZ);
+                UpdateStage(entity);
+            }
+        }
+
+        /// <summary>
+        /// 实体退出关卡
+        /// </summary>
+        public void EntityExit(uint entityID)
+        {
+            if (entityDic.TryGetValue(entityID, out BattleEntity entity))
+            {
+                ExitStage(entity);
             }
         }
     }

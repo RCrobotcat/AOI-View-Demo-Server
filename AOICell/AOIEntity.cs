@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Runtime.InteropServices;
+using System.Xml;
 
 // AOI实体
 namespace AOICellSpace
@@ -13,6 +15,18 @@ namespace AOICellSpace
         MoveCross, // 移动进入
         MoveInside, // 在宫格内部移动
         MoveOut, // 移动离开
+    }
+    public enum MoveCrossCellDirEnum
+    {
+        None,
+        Up,
+        Down,
+        Left,
+        Right,
+        LeftUp,
+        RightUp,
+        RightDown,
+        LeftDown
     }
 
     public class AOIEntity
@@ -41,6 +55,9 @@ namespace AOICellSpace
 
         private EntityOperationEnum operationEnum;
         public EntityOperationEnum EntityOperation { get => operationEnum; }
+
+        private MoveCrossCellDirEnum moveCrossCellDirEnum;
+        public MoveCrossCellDirEnum MoveCrossCellDir { get => moveCrossCellDirEnum; }
 
         AOICell[] aroundAddCell = null; // 存量视野周围新增的宫格
 
@@ -82,14 +99,58 @@ namespace AOICellSpace
                 if (operationEnum != EntityOperationEnum.TransferEnter && operationEnum != EntityOperationEnum.TransferOut)
                 {
                     operationEnum = EntityOperationEnum.MoveCross;
+                    if (xIndex < oldXIndex)
+                    {
+                        if (zIndex == oldZIndex)
+                        {
+                            moveCrossCellDirEnum = MoveCrossCellDirEnum.Left;
+                        }
+                        else if (zIndex < oldZIndex)
+                        {
+                            moveCrossCellDirEnum = MoveCrossCellDirEnum.LeftDown;
+                        }
+                        else
+                        {
+                            moveCrossCellDirEnum = MoveCrossCellDirEnum.LeftUp;
+                        }
+                    }
+                    else if (xIndex > oldXIndex)
+                    {
+                        if (zIndex == oldZIndex)
+                        {
+                            moveCrossCellDirEnum = MoveCrossCellDirEnum.Right;
+                        }
+                        else if (zIndex < oldZIndex)
+                        {
+                            moveCrossCellDirEnum = MoveCrossCellDirEnum.RightDown;
+                        }
+                        else
+                        {
+                            moveCrossCellDirEnum = MoveCrossCellDirEnum.RightUp;
+                        }
+                    }
+                    else
+                    {
+                        if (zIndex > oldZIndex)
+                        {
+                            moveCrossCellDirEnum = MoveCrossCellDirEnum.Up;
+                        }
+                        else
+                        {
+                            moveCrossCellDirEnum = MoveCrossCellDirEnum.Down;
+                        }
+                    }
                 }
 
-                // 进入新的宫格
+                // 移动进入新的宫格
+                this.Log($"Entity: {entityID} Move Cross Cell: {cellKey}");
                 aoiManager.MoveCrossCell(this);
             }
             else
             {
                 operationEnum = EntityOperationEnum.MoveInside;
+                moveCrossCellDirEnum = MoveCrossCellDirEnum.None;
+                this.Log($"Entity: {entityID} Move Inside Cell: {cellKey}");
                 aoiManager.MoveInsideCell(this);
             }
         }

@@ -1,48 +1,504 @@
-[L]# 13:10:06-113  Tid:9 >> Init Stage:101 done!
-[L]# 13:10:11-149  Tid:8 >> New Client Online: True.
-[L]# 13:10:12-928  Tid:8 >> Receive Msg from Client: LoginRequest.
-[L]# 13:10:12-935  Tid:9 >> Entity: 1001 is entering stage...
-[L]# 13:10:12-936  Tid:9 >> EnterStage entityID:1001 success!
-[L]# 13:10:12-945  Tid:9 >> Player(entityID: 1001) Online! Enter Stage:101.
-[L]# 13:10:12-948  Tid:9 >> AOIEntity: 1001 enter Cell: 0_0, x: 10, z: 10
-[L]# 13:10:12-950  Tid:9 >> AOIEntity: 1001 enter Cell: -1_-1, x: 10, z: 10
-[L]# 13:10:12-950  Tid:9 >> AOIEntity: 1001 enter Cell: -1_0, x: 10, z: 10
-[L]# 13:10:12-951  Tid:9 >> AOIEntity: 1001 enter Cell: -1_1, x: 10, z: 10
-[L]# 13:10:12-951  Tid:9 >> AOIEntity: 1001 enter Cell: 0_-1, x: 10, z: 10
-[L]# 13:10:12-951  Tid:9 >> AOIEntity: 1001 enter Cell: 0_1, x: 10, z: 10
-[L]# 13:10:12-951  Tid:9 >> AOIEntity: 1001 enter Cell: 1_-1, x: 10, z: 10
-[L]# 13:10:12-951  Tid:9 >> AOIEntity: 1001 enter Cell: 1_0, x: 10, z: 10
-[L]# 13:10:12-951  Tid:9 >> AOIEntity: 1001 enter Cell: 1_1, x: 10, z: 10
-[L]# 13:10:18-170  Tid:8 >> Cliend Offline.
-[L]# 13:10:19-572  Tid:8 >> New Client Online: True.
-[L]# 13:10:34-442  Tid:8 >> Receive Msg from Client: LoginRequest.
-[L]# 13:10:34-450  Tid:9 >> Entity: 1002 is entering stage...
-[L]# 13:10:34-450  Tid:9 >> EnterStage entityID:1002 success!
-[L]# 13:10:34-451  Tid:9 >> Player(entityID: 1002) Online! Enter Stage:101.
-[L]# 13:10:34-451  Tid:9 >> AOIEntity: 1001 enter, x: 10, z: 10
-[L]# 13:10:34-452  Tid:9 >> AOIEntity: 1002 enter Cell: 0_0, x: 10, z: 10
-[L]# 13:10:34-453  Tid:9 >> AOIEntity: 1002 enter Cell: -1_-1, x: 10, z: 10
-[L]# 13:10:34-453  Tid:9 >> AOIEntity: 1002 enter Cell: -1_0, x: 10, z: 10
-[L]# 13:10:34-453  Tid:9 >> AOIEntity: 1002 enter Cell: -1_1, x: 10, z: 10
-[L]# 13:10:34-453  Tid:9 >> AOIEntity: 1002 enter Cell: 0_-1, x: 10, z: 10
-[L]# 13:10:34-453  Tid:9 >> AOIEntity: 1002 enter Cell: 0_1, x: 10, z: 10
-[L]# 13:10:34-453  Tid:9 >> AOIEntity: 1002 enter Cell: 1_-1, x: 10, z: 10
-[L]# 13:10:34-454  Tid:9 >> AOIEntity: 1002 enter Cell: 1_0, x: 10, z: 10
-[L]# 13:10:34-454  Tid:9 >> AOIEntity: 1002 enter Cell: 1_1, x: 10, z: 10
-[L]# 13:24:34-083  Tid:8 >> Cliend Offline.
-[L]# 13:24:35-488  Tid:8 >> New Client Online: True.
-[L]# 13:24:35-982  Tid:8 >> Receive Msg from Client: LoginRequest.
-[L]# 13:24:35-992  Tid:9 >> Entity: 1003 is entering stage...
-[L]# 13:24:35-992  Tid:9 >> EnterStage entityID:1003 success!
-[L]# 13:24:35-992  Tid:9 >> Player(entityID: 1003) Online! Enter Stage:101.
-[L]# 13:24:35-992  Tid:9 >> AOIEntity: 1001 enter, x: 10, z: 10
-[L]# 13:24:35-993  Tid:9 >> AOIEntity: 1002 enter, x: 10, z: 10
-[L]# 13:24:35-993  Tid:9 >> AOIEntity: 1003 enter Cell: 0_0, x: 10, z: 10
-[L]# 13:24:35-994  Tid:9 >> AOIEntity: 1003 enter Cell: -1_-1, x: 10, z: 10
-[L]# 13:24:35-994  Tid:9 >> AOIEntity: 1003 enter Cell: -1_0, x: 10, z: 10
-[L]# 13:24:35-994  Tid:9 >> AOIEntity: 1003 enter Cell: -1_1, x: 10, z: 10
-[L]# 13:24:35-994  Tid:9 >> AOIEntity: 1003 enter Cell: 0_-1, x: 10, z: 10
-[L]# 13:24:35-994  Tid:9 >> AOIEntity: 1003 enter Cell: 0_1, x: 10, z: 10
-[L]# 13:24:35-994  Tid:9 >> AOIEntity: 1003 enter Cell: 1_-1, x: 10, z: 10
-[L]# 13:24:35-994  Tid:9 >> AOIEntity: 1003 enter Cell: 1_0, x: 10, z: 10
-[L]# 13:24:35-994  Tid:9 >> AOIEntity: 1003 enter Cell: 1_1, x: 10, z: 10
+[L]# 12:31:14-986  Tid:9 >> Init Stage:101 done!
+[L]# 12:31:18-201  Tid:8 >> New Client Online: True.
+[L]# 12:31:18-792  Tid:8 >> Receive Msg from Client: LoginRequest.
+[L]# 12:31:18-794  Tid:9 >> Entity: 1001 is entering stage...
+[L]# 12:31:18-795  Tid:9 >> EnterStage entityID:1001 success!
+[L]# 12:31:18-800  Tid:9 >> Entity: 1001 Move Cross Cell: 0_0
+[L]# 12:31:18-803  Tid:9 >> Player(entityID: 1001) Online! Enter Stage:101.
+[L]# 12:31:18-804  Tid:9 >> AOIEntity: 1001 enter Cell: 0_0, x: 10, z: 10
+[L]# 12:31:18-805  Tid:9 >> AOIEntity: 1001 enter Cell: -1_-1, x: 10, z: 10
+[L]# 12:31:18-805  Tid:9 >> AOIEntity: 1001 enter Cell: -1_0, x: 10, z: 10
+[L]# 12:31:18-806  Tid:9 >> AOIEntity: 1001 enter Cell: -1_1, x: 10, z: 10
+[L]# 12:31:18-806  Tid:9 >> AOIEntity: 1001 enter Cell: 0_-1, x: 10, z: 10
+[L]# 12:31:18-806  Tid:9 >> AOIEntity: 1001 enter Cell: 0_1, x: 10, z: 10
+[L]# 12:31:18-806  Tid:9 >> AOIEntity: 1001 enter Cell: 1_-1, x: 10, z: 10
+[L]# 12:31:18-806  Tid:9 >> AOIEntity: 1001 enter Cell: 1_0, x: 10, z: 10
+[L]# 12:31:18-806  Tid:9 >> AOIEntity: 1001 enter Cell: 1_1, x: 10, z: 10
+[L]# 12:31:20-032  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:20-042  Tid:9 >> Entity: 1001 Move Inside Cell: 0_0
+[L]# 12:31:20-047  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:20-057  Tid:9 >> Entity: 1001 Move Inside Cell: 0_0
+[L]# 12:31:20-067  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:20-072  Tid:9 >> Entity: 1001 Move Inside Cell: 0_0
+[L]# 12:31:20-089  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:20-103  Tid:9 >> Entity: 1001 Move Inside Cell: 0_0
+[L]# 12:31:20-107  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:20-118  Tid:9 >> Entity: 1001 Move Inside Cell: 0_0
+[L]# 12:31:20-127  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:20-133  Tid:9 >> Entity: 1001 Move Inside Cell: 0_0
+[L]# 12:31:20-148  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:20-148  Tid:9 >> Entity: 1001 Move Inside Cell: 0_0
+[L]# 12:31:20-168  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:20-179  Tid:9 >> Entity: 1001 Move Inside Cell: 0_0
+[L]# 12:31:20-188  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:20-194  Tid:9 >> Entity: 1001 Move Inside Cell: 0_0
+[L]# 12:31:20-207  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:20-210  Tid:9 >> Entity: 1001 Move Inside Cell: 0_0
+[L]# 12:31:20-228  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:20-240  Tid:9 >> Entity: 1001 Move Inside Cell: 0_0
+[L]# 12:31:20-248  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:20-255  Tid:9 >> Entity: 1001 Move Inside Cell: 0_0
+[L]# 12:31:20-268  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:20-271  Tid:9 >> Entity: 1001 Move Inside Cell: 0_0
+[L]# 12:31:20-287  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:20-301  Tid:9 >> Entity: 1001 Move Inside Cell: 0_0
+[L]# 12:31:20-308  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:20-316  Tid:9 >> Entity: 1001 Move Inside Cell: 0_0
+[L]# 12:31:20-327  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:20-331  Tid:9 >> Entity: 1001 Move Inside Cell: 0_0
+[L]# 12:31:20-349  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:20-361  Tid:9 >> Entity: 1001 Move Inside Cell: 0_0
+[L]# 12:31:20-368  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:20-377  Tid:9 >> Entity: 1001 Move Inside Cell: 0_0
+[L]# 12:31:20-387  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:20-392  Tid:9 >> Entity: 1001 Move Inside Cell: 0_0
+[L]# 12:31:20-408  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:20-423  Tid:9 >> Entity: 1001 Move Inside Cell: 0_0
+[L]# 12:31:20-428  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:20-439  Tid:9 >> Entity: 1001 Move Inside Cell: 0_0
+[L]# 12:31:20-448  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:20-453  Tid:9 >> Entity: 1001 Move Inside Cell: 0_0
+[L]# 12:31:20-468  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:20-468  Tid:9 >> Entity: 1001 Move Inside Cell: 0_0
+[L]# 12:31:20-488  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:20-499  Tid:9 >> Entity: 1001 Move Inside Cell: 0_0
+[L]# 12:31:20-508  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:20-515  Tid:9 >> Entity: 1001 Move Inside Cell: 0_0
+[L]# 12:31:20-527  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:20-531  Tid:9 >> Entity: 1001 Move Inside Cell: 0_0
+[L]# 12:31:20-547  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:20-562  Tid:9 >> Entity: 1001 Move Inside Cell: 0_0
+[L]# 12:31:20-567  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:20-577  Tid:9 >> Entity: 1001 Move Inside Cell: 0_0
+[L]# 12:31:20-589  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:20-592  Tid:9 >> Entity: 1001 Move Inside Cell: 0_0
+[L]# 12:31:20-608  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:20-623  Tid:9 >> Entity: 1001 Move Inside Cell: 0_0
+[L]# 12:31:20-629  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:20-639  Tid:9 >> Entity: 1001 Move Inside Cell: 0_0
+[L]# 12:31:20-647  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:20-654  Tid:9 >> Entity: 1001 Move Inside Cell: 0_0
+[L]# 12:31:20-667  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:20-670  Tid:9 >> Entity: 1001 Move Inside Cell: 0_0
+[L]# 12:31:20-688  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:20-700  Tid:9 >> Entity: 1001 Move Inside Cell: 0_0
+[L]# 12:31:20-709  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:20-716  Tid:9 >> Entity: 1001 Move Inside Cell: 0_0
+[L]# 12:31:20-727  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:20-732  Tid:9 >> Entity: 1001 Move Inside Cell: 0_0
+[L]# 12:31:20-747  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:20-748  Tid:9 >> Entity: 1001 Move Inside Cell: 0_0
+[L]# 12:31:20-767  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:20-778  Tid:9 >> Entity: 1001 Move Inside Cell: 0_0
+[L]# 12:31:20-788  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:20-794  Tid:9 >> Entity: 1001 Move Inside Cell: 0_0
+[L]# 12:31:20-808  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:20-809  Tid:9 >> Entity: 1001 Move Inside Cell: 0_0
+[L]# 12:31:20-828  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:20-841  Tid:9 >> Entity: 1001 Move Inside Cell: 0_0
+[L]# 12:31:20-848  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:20-856  Tid:9 >> Entity: 1001 Move Inside Cell: 0_0
+[L]# 12:31:20-868  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:20-872  Tid:9 >> Entity: 1001 Move Inside Cell: 0_0
+[L]# 12:31:20-888  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:20-903  Tid:9 >> Entity: 1001 Move Inside Cell: 0_0
+[L]# 12:31:20-908  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:20-919  Tid:9 >> Entity: 1001 Move Inside Cell: 0_0
+[L]# 12:31:20-928  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:20-934  Tid:9 >> Entity: 1001 Move Inside Cell: 0_0
+[L]# 12:31:20-947  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:20-949  Tid:9 >> Entity: 1001 Move Inside Cell: 0_0
+[L]# 12:31:20-969  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:20-980  Tid:9 >> Entity: 1001 Move Inside Cell: 0_0
+[L]# 12:31:20-988  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:20-996  Tid:9 >> Entity: 1001 Move Inside Cell: 0_0
+[L]# 12:31:21-007  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:21-011  Tid:9 >> Entity: 1001 Move Inside Cell: 0_0
+[L]# 12:31:21-028  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:21-042  Tid:9 >> Entity: 1001 Move Cross Cell: 1_0
+[L]# 12:31:22-708  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:22-714  Tid:9 >> Entity: 1001 Move Inside Cell: 1_0
+[L]# 12:31:22-727  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:22-729  Tid:9 >> Entity: 1001 Move Inside Cell: 1_0
+[L]# 12:31:22-748  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:22-759  Tid:9 >> Entity: 1001 Move Inside Cell: 1_0
+[L]# 12:31:22-768  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:22-775  Tid:9 >> Entity: 1001 Move Inside Cell: 1_0
+[L]# 12:31:22-788  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:22-791  Tid:9 >> Entity: 1001 Move Inside Cell: 1_0
+[L]# 12:31:22-808  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:22-822  Tid:9 >> Entity: 1001 Move Inside Cell: 1_0
+[L]# 12:31:22-827  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:22-837  Tid:9 >> Entity: 1001 Move Inside Cell: 1_0
+[L]# 12:31:22-847  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:22-853  Tid:9 >> Entity: 1001 Move Inside Cell: 1_0
+[L]# 12:31:22-868  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:22-869  Tid:9 >> Entity: 1001 Move Inside Cell: 1_0
+[L]# 12:31:22-887  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:22-899  Tid:9 >> Entity: 1001 Move Inside Cell: 1_0
+[L]# 12:31:22-908  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:22-915  Tid:9 >> Entity: 1001 Move Inside Cell: 1_0
+[L]# 12:31:22-928  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:22-930  Tid:9 >> Entity: 1001 Move Inside Cell: 1_0
+[L]# 12:31:22-948  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:22-962  Tid:9 >> Entity: 1001 Move Inside Cell: 1_0
+[L]# 12:31:22-967  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:22-978  Tid:9 >> Entity: 1001 Move Inside Cell: 1_0
+[L]# 12:31:22-988  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:22-993  Tid:9 >> Entity: 1001 Move Inside Cell: 1_0
+[L]# 12:31:23-008  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:23-008  Tid:9 >> Entity: 1001 Move Inside Cell: 1_0
+[L]# 12:31:23-028  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:23-039  Tid:9 >> Entity: 1001 Move Inside Cell: 1_0
+[L]# 12:31:23-048  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:23-055  Tid:9 >> Entity: 1001 Move Inside Cell: 1_0
+[L]# 12:31:23-068  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:23-070  Tid:9 >> Entity: 1001 Move Inside Cell: 1_0
+[L]# 12:31:23-088  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:23-101  Tid:9 >> Entity: 1001 Move Inside Cell: 1_0
+[L]# 12:31:23-108  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:23-117  Tid:9 >> Entity: 1001 Move Inside Cell: 1_0
+[L]# 12:31:23-128  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:23-132  Tid:9 >> Entity: 1001 Move Inside Cell: 1_0
+[L]# 12:31:23-147  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:23-163  Tid:9 >> Entity: 1001 Move Inside Cell: 1_0
+[L]# 12:31:23-167  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:23-178  Tid:9 >> Entity: 1001 Move Inside Cell: 1_0
+[L]# 12:31:23-188  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:23-194  Tid:9 >> Entity: 1001 Move Inside Cell: 1_0
+[L]# 12:31:23-207  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:23-210  Tid:9 >> Entity: 1001 Move Inside Cell: 1_0
+[L]# 12:31:23-231  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:23-242  Tid:9 >> Entity: 1001 Move Inside Cell: 1_0
+[L]# 12:31:23-248  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:23-257  Tid:9 >> Entity: 1001 Move Inside Cell: 1_0
+[L]# 12:31:23-268  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:23-273  Tid:9 >> Entity: 1001 Move Inside Cell: 1_0
+[L]# 12:31:23-288  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:23-289  Tid:9 >> Entity: 1001 Move Inside Cell: 1_0
+[L]# 12:31:24-708  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:24-719  Tid:9 >> Entity: 1001 Move Inside Cell: 1_0
+[L]# 12:31:24-727  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:24-735  Tid:9 >> Entity: 1001 Move Inside Cell: 1_0
+[L]# 12:31:24-748  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:24-751  Tid:9 >> Entity: 1001 Move Inside Cell: 1_0
+[L]# 12:31:24-769  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:24-782  Tid:9 >> Entity: 1001 Move Inside Cell: 1_0
+[L]# 12:31:24-789  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:24-797  Tid:9 >> Entity: 1001 Move Inside Cell: 1_0
+[L]# 12:31:24-808  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:24-812  Tid:9 >> Entity: 1001 Move Inside Cell: 1_0
+[L]# 12:31:24-828  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:24-842  Tid:9 >> Entity: 1001 Move Inside Cell: 1_0
+[L]# 12:31:24-848  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:24-857  Tid:9 >> Entity: 1001 Move Inside Cell: 1_0
+[L]# 12:31:24-868  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:24-873  Tid:9 >> Entity: 1001 Move Inside Cell: 1_0
+[L]# 12:31:24-887  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:24-889  Tid:9 >> Entity: 1001 Move Inside Cell: 1_0
+[L]# 12:31:24-908  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:24-920  Tid:9 >> Entity: 1001 Move Inside Cell: 1_0
+[L]# 12:31:24-928  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:24-935  Tid:9 >> Entity: 1001 Move Inside Cell: 1_0
+[L]# 12:31:24-947  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:24-951  Tid:9 >> Entity: 1001 Move Inside Cell: 1_0
+[L]# 12:31:24-967  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:24-982  Tid:9 >> Entity: 1001 Move Inside Cell: 1_0
+[L]# 12:31:24-988  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:24-997  Tid:9 >> Entity: 1001 Move Inside Cell: 1_0
+[L]# 12:31:25-007  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:25-013  Tid:9 >> Entity: 1001 Move Inside Cell: 1_0
+[L]# 12:31:25-028  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:25-043  Tid:9 >> Entity: 1001 Move Inside Cell: 1_0
+[L]# 12:31:25-047  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:25-059  Tid:9 >> Entity: 1001 Move Inside Cell: 1_0
+[L]# 12:31:25-067  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:25-074  Tid:9 >> Entity: 1001 Move Inside Cell: 1_0
+[L]# 12:31:25-088  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:25-090  Tid:9 >> Entity: 1001 Move Inside Cell: 1_0
+[L]# 12:31:25-109  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:25-122  Tid:9 >> Entity: 1001 Move Inside Cell: 1_0
+[L]# 12:31:25-128  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:25-138  Tid:9 >> Entity: 1001 Move Inside Cell: 1_0
+[L]# 12:31:25-148  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:25-153  Tid:9 >> Entity: 1001 Move Inside Cell: 1_0
+[L]# 12:31:25-167  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:25-183  Tid:9 >> Entity: 1001 Move Inside Cell: 1_0
+[L]# 12:31:25-188  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:25-198  Tid:9 >> Entity: 1001 Move Inside Cell: 1_0
+[L]# 12:31:25-208  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:25-214  Tid:9 >> Entity: 1001 Move Inside Cell: 1_0
+[L]# 12:31:25-228  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:25-229  Tid:9 >> Entity: 1001 Move Inside Cell: 1_0
+[L]# 12:31:25-248  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:25-261  Tid:9 >> Entity: 1001 Move Inside Cell: 1_0
+[L]# 12:31:25-268  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:25-276  Tid:9 >> Entity: 1001 Move Inside Cell: 1_0
+[L]# 12:31:25-288  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:25-292  Tid:9 >> Entity: 1001 Move Inside Cell: 1_0
+[L]# 12:31:25-307  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:25-307  Tid:9 >> Entity: 1001 Move Inside Cell: 1_0
+[L]# 12:31:25-327  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:25-338  Tid:9 >> Entity: 1001 Move Inside Cell: 1_0
+[L]# 12:31:25-347  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:25-353  Tid:9 >> Entity: 1001 Move Inside Cell: 1_0
+[L]# 12:31:25-368  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:25-369  Tid:9 >> Entity: 1001 Move Inside Cell: 1_0
+[L]# 12:31:25-388  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:25-400  Tid:9 >> Entity: 1001 Move Inside Cell: 1_0
+[L]# 12:31:25-408  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:25-415  Tid:9 >> Entity: 1001 Move Inside Cell: 1_0
+[L]# 12:31:25-429  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:25-430  Tid:9 >> Entity: 1001 Move Inside Cell: 1_0
+[L]# 12:31:25-447  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:25-461  Tid:9 >> Entity: 1001 Move Inside Cell: 1_0
+[L]# 12:31:25-467  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:25-476  Tid:9 >> Entity: 1001 Move Inside Cell: 1_0
+[L]# 12:31:25-487  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:25-492  Tid:9 >> Entity: 1001 Move Inside Cell: 1_0
+[L]# 12:31:25-507  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:25-522  Tid:9 >> Entity: 1001 Move Inside Cell: 1_0
+[L]# 12:31:25-528  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:25-538  Tid:9 >> Entity: 1001 Move Inside Cell: 1_0
+[L]# 12:31:25-549  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:25-554  Tid:9 >> Entity: 1001 Move Inside Cell: 1_0
+[L]# 12:31:25-567  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:25-569  Tid:9 >> Entity: 1001 Move Inside Cell: 1_0
+[L]# 12:31:25-589  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:25-600  Tid:9 >> Entity: 1001 Move Inside Cell: 1_0
+[L]# 12:31:25-607  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:25-616  Tid:9 >> Entity: 1001 Move Inside Cell: 1_0
+[L]# 12:31:25-628  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:25-631  Tid:9 >> Entity: 1001 Move Inside Cell: 1_0
+[L]# 12:31:25-648  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:25-662  Tid:9 >> Entity: 1001 Move Inside Cell: 1_0
+[L]# 12:31:25-668  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:25-677  Tid:9 >> Entity: 1001 Move Inside Cell: 1_0
+[L]# 12:31:25-688  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:25-692  Tid:9 >> Entity: 1001 Move Inside Cell: 1_0
+[L]# 12:31:25-707  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:25-708  Tid:9 >> Entity: 1001 Move Inside Cell: 1_0
+[L]# 12:31:25-729  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:25-738  Tid:9 >> Entity: 1001 Move Inside Cell: 1_0
+[L]# 12:31:25-748  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:25-753  Tid:9 >> Entity: 1001 Move Inside Cell: 1_0
+[L]# 12:31:25-768  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:25-769  Tid:9 >> Entity: 1001 Move Inside Cell: 1_0
+[L]# 12:31:25-788  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:25-800  Tid:9 >> Entity: 1001 Move Inside Cell: 1_0
+[L]# 12:31:25-808  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:25-815  Tid:9 >> Entity: 1001 Move Inside Cell: 1_0
+[L]# 12:31:25-827  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:25-830  Tid:9 >> Entity: 1001 Move Inside Cell: 1_0
+[L]# 12:31:25-847  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:25-862  Tid:9 >> Entity: 1001 Move Inside Cell: 1_0
+[L]# 12:31:25-868  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:25-878  Tid:9 >> Entity: 1001 Move Inside Cell: 1_0
+[L]# 12:31:25-888  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:25-893  Tid:9 >> Entity: 1001 Move Inside Cell: 1_0
+[L]# 12:31:25-909  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:25-925  Tid:9 >> Entity: 1001 Move Inside Cell: 1_0
+[L]# 12:31:25-927  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:25-940  Tid:9 >> Entity: 1001 Move Inside Cell: 1_0
+[L]# 12:31:25-947  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:25-956  Tid:9 >> Entity: 1001 Move Inside Cell: 1_0
+[L]# 12:31:25-967  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:25-972  Tid:9 >> Entity: 1001 Move Inside Cell: 1_0
+[L]# 12:31:25-990  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:26-003  Tid:9 >> Entity: 1001 Move Inside Cell: 1_0
+[L]# 12:31:26-008  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:26-018  Tid:9 >> Entity: 1001 Move Inside Cell: 1_0
+[L]# 12:31:26-028  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:26-034  Tid:9 >> Entity: 1001 Move Inside Cell: 1_0
+[L]# 12:31:26-047  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:26-049  Tid:9 >> Entity: 1001 Move Inside Cell: 1_0
+[L]# 12:31:26-067  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:26-080  Tid:9 >> Entity: 1001 Move Inside Cell: 1_0
+[L]# 12:31:26-088  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:26-095  Tid:9 >> Entity: 1001 Move Inside Cell: 1_0
+[L]# 12:31:26-108  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:26-111  Tid:9 >> Entity: 1001 Move Inside Cell: 1_0
+[L]# 12:31:26-128  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:26-142  Tid:9 >> Entity: 1001 Move Cross Cell: 2_0
+[L]# 12:31:26-148  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:26-157  Tid:9 >> Entity: 1001 Move Inside Cell: 2_0
+[L]# 12:31:26-168  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:26-173  Tid:9 >> Entity: 1001 Move Inside Cell: 2_0
+[L]# 12:31:26-187  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:26-188  Tid:9 >> Entity: 1001 Move Inside Cell: 2_0
+[L]# 12:31:26-207  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:26-218  Tid:9 >> Entity: 1001 Move Inside Cell: 2_0
+[L]# 12:31:26-228  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:26-234  Tid:9 >> Entity: 1001 Move Inside Cell: 2_0
+[L]# 12:31:26-247  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:26-249  Tid:9 >> Entity: 1001 Move Inside Cell: 2_0
+[L]# 12:31:26-268  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:26-281  Tid:9 >> Entity: 1001 Move Inside Cell: 2_0
+[L]# 12:31:26-287  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:26-297  Tid:9 >> Entity: 1001 Move Inside Cell: 2_0
+[L]# 12:31:26-308  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:26-312  Tid:9 >> Entity: 1001 Move Inside Cell: 2_0
+[L]# 12:31:26-328  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:26-344  Tid:9 >> Entity: 1001 Move Inside Cell: 2_0
+[L]# 12:31:30-909  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:30-915  Tid:9 >> Entity: 1001 Move Inside Cell: 2_0
+[L]# 12:31:30-930  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:30-931  Tid:9 >> Entity: 1001 Move Inside Cell: 2_0
+[L]# 12:31:30-947  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:30-962  Tid:9 >> Entity: 1001 Move Inside Cell: 2_0
+[L]# 12:31:30-967  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:30-978  Tid:9 >> Entity: 1001 Move Inside Cell: 2_0
+[L]# 12:31:30-991  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:30-993  Tid:9 >> Entity: 1001 Move Inside Cell: 2_0
+[L]# 12:31:31-010  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:31-025  Tid:9 >> Entity: 1001 Move Inside Cell: 2_0
+[L]# 12:31:31-026  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:31-041  Tid:9 >> Entity: 1001 Move Inside Cell: 2_0
+[L]# 12:31:31-049  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:31-055  Tid:9 >> Entity: 1001 Move Inside Cell: 2_0
+[L]# 12:31:31-079  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:31-087  Tid:9 >> Entity: 1001 Move Inside Cell: 2_0
+[L]# 12:31:31-090  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:31-103  Tid:9 >> Entity: 1001 Move Inside Cell: 2_0
+[L]# 12:31:31-111  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:31-119  Tid:9 >> Entity: 1001 Move Inside Cell: 2_0
+[L]# 12:31:31-131  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:31-135  Tid:9 >> Entity: 1001 Move Inside Cell: 2_0
+[L]# 12:31:31-150  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:31-151  Tid:9 >> Entity: 1001 Move Inside Cell: 2_0
+[L]# 12:31:31-171  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:31-181  Tid:9 >> Entity: 1001 Move Inside Cell: 2_0
+[L]# 12:31:31-189  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:31-197  Tid:9 >> Entity: 1001 Move Inside Cell: 2_0
+[L]# 12:31:31-207  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:31-212  Tid:9 >> Entity: 1001 Move Inside Cell: 2_0
+[L]# 12:31:31-233  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:31-243  Tid:9 >> Entity: 1001 Move Inside Cell: 2_0
+[L]# 12:31:31-246  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:31-259  Tid:9 >> Entity: 1001 Move Inside Cell: 2_0
+[L]# 12:31:31-271  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:31-275  Tid:9 >> Entity: 1001 Move Inside Cell: 2_0
+[L]# 12:31:31-289  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:31-290  Tid:9 >> Entity: 1001 Move Inside Cell: 2_0
+[L]# 12:31:31-311  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:31-321  Tid:9 >> Entity: 1001 Move Inside Cell: 2_0
+[L]# 12:31:31-329  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:31-337  Tid:9 >> Entity: 1001 Move Inside Cell: 2_0
+[L]# 12:31:31-347  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:31-352  Tid:9 >> Entity: 1001 Move Inside Cell: 2_0
+[L]# 12:31:31-369  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:31-382  Tid:9 >> Entity: 1001 Move Inside Cell: 2_0
+[L]# 12:31:31-388  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:31-397  Tid:9 >> Entity: 1001 Move Inside Cell: 2_0
+[L]# 12:31:31-408  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:31-413  Tid:9 >> Entity: 1001 Move Inside Cell: 2_0
+[L]# 12:31:31-427  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:31-428  Tid:9 >> Entity: 1001 Move Inside Cell: 2_0
+[L]# 12:31:31-450  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:31-460  Tid:9 >> Entity: 1001 Move Inside Cell: 2_0
+[L]# 12:31:31-466  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:31-476  Tid:9 >> Entity: 1001 Move Inside Cell: 2_0
+[L]# 12:31:31-488  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:31-491  Tid:9 >> Entity: 1001 Move Inside Cell: 2_0
+[L]# 12:31:31-506  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:31-506  Tid:9 >> Entity: 1001 Move Inside Cell: 2_0
+[L]# 12:31:31-535  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:31-537  Tid:9 >> Entity: 1001 Move Inside Cell: 2_0
+[L]# 12:31:31-549  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:31-553  Tid:9 >> Entity: 1001 Move Inside Cell: 2_0
+[L]# 12:31:31-569  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:31-584  Tid:9 >> Entity: 1001 Move Inside Cell: 2_0
+[L]# 12:31:31-589  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:31-600  Tid:9 >> Entity: 1001 Move Inside Cell: 2_0
+[L]# 12:31:31-609  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:31-615  Tid:9 >> Entity: 1001 Move Inside Cell: 2_0
+[L]# 12:31:31-632  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:31-647  Tid:9 >> Entity: 1001 Move Inside Cell: 2_0
+[L]# 12:31:31-647  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:31-662  Tid:9 >> Entity: 1001 Move Inside Cell: 2_0
+[L]# 12:31:31-671  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:31-677  Tid:9 >> Entity: 1001 Move Inside Cell: 2_0
+[L]# 12:31:31-690  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:31-693  Tid:9 >> Entity: 1001 Move Inside Cell: 2_0
+[L]# 12:31:31-710  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:31-724  Tid:9 >> Entity: 1001 Move Inside Cell: 2_0
+[L]# 12:31:31-728  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:31-739  Tid:9 >> Entity: 1001 Move Inside Cell: 2_0
+[L]# 12:31:31-748  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:31-754  Tid:9 >> Entity: 1001 Move Inside Cell: 2_0
+[L]# 12:31:31-769  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:31-770  Tid:9 >> Entity: 1001 Move Inside Cell: 2_0
+[L]# 12:31:31-787  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:31-802  Tid:9 >> Entity: 1001 Move Inside Cell: 2_0
+[L]# 12:31:31-809  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:31-818  Tid:9 >> Entity: 1001 Move Inside Cell: 2_0
+[L]# 12:31:31-837  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:31-847  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:31-849  Tid:9 >> Entity: 1001 Move Inside Cell: 2_0
+[L]# 12:31:31-849  Tid:9 >> Entity: 1001 Move Inside Cell: 2_0
+[L]# 12:31:31-867  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:31-880  Tid:9 >> Entity: 1001 Move Inside Cell: 2_0
+[L]# 12:31:31-889  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:31-896  Tid:9 >> Entity: 1001 Move Inside Cell: 2_0
+[L]# 12:31:31-906  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:31-912  Tid:9 >> Entity: 1001 Move Inside Cell: 2_0
+[L]# 12:31:31-930  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:31-942  Tid:9 >> Entity: 1001 Move Inside Cell: 2_0
+[L]# 12:31:31-950  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:31-958  Tid:9 >> Entity: 1001 Move Cross Cell: 3_0
+[L]# 12:31:31-968  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:31-973  Tid:9 >> Entity: 1001 Move Inside Cell: 3_0
+[L]# 12:31:31-992  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:32-003  Tid:9 >> Entity: 1001 Move Inside Cell: 3_0
+[L]# 12:31:32-007  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:32-019  Tid:9 >> Entity: 1001 Move Inside Cell: 3_0
+[L]# 12:31:32-030  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:32-034  Tid:9 >> Entity: 1001 Move Inside Cell: 3_0
+[L]# 12:31:32-047  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:32-049  Tid:9 >> Entity: 1001 Move Inside Cell: 3_0
+[L]# 12:31:32-067  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:32-081  Tid:9 >> Entity: 1001 Move Inside Cell: 3_0
+[L]# 12:31:32-087  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:32-096  Tid:9 >> Entity: 1001 Move Inside Cell: 3_0
+[L]# 12:31:32-110  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:32-112  Tid:9 >> Entity: 1001 Move Inside Cell: 3_0
+[L]# 12:31:32-129  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:32-143  Tid:9 >> Entity: 1001 Move Inside Cell: 3_0
+[L]# 12:31:32-149  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:32-159  Tid:9 >> Entity: 1001 Move Inside Cell: 3_0
+[L]# 12:31:32-169  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:32-173  Tid:9 >> Entity: 1001 Move Inside Cell: 3_0
+[L]# 12:31:32-190  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:32-205  Tid:9 >> Entity: 1001 Move Inside Cell: 3_0
+[L]# 12:31:32-209  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:32-220  Tid:9 >> Entity: 1001 Move Inside Cell: 3_0
+[L]# 12:31:32-226  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:32-236  Tid:9 >> Entity: 1001 Move Inside Cell: 3_0
+[L]# 12:31:32-248  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:32-252  Tid:9 >> Entity: 1001 Move Inside Cell: 3_0
+[L]# 12:31:32-267  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:32-268  Tid:9 >> Entity: 1001 Move Inside Cell: 3_0
+[L]# 12:31:32-298  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:32-307  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:32-314  Tid:9 >> Entity: 1001 Move Inside Cell: 3_0
+[L]# 12:31:32-314  Tid:9 >> Entity: 1001 Move Inside Cell: 3_0
+[L]# 12:31:32-326  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:32-329  Tid:9 >> Entity: 1001 Move Inside Cell: 3_0
+[L]# 12:31:32-351  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:32-361  Tid:9 >> Entity: 1001 Move Inside Cell: 3_0
+[L]# 12:31:32-367  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:32-377  Tid:9 >> Entity: 1001 Move Inside Cell: 3_0
+[L]# 12:31:32-390  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:32-393  Tid:9 >> Entity: 1001 Move Inside Cell: 3_0
+[L]# 12:31:32-408  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:32-423  Tid:9 >> Entity: 1001 Move Inside Cell: 3_0
+[L]# 12:31:32-431  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:32-439  Tid:9 >> Entity: 1001 Move Inside Cell: 3_0
+[L]# 12:31:32-457  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:32-468  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:32-469  Tid:9 >> Entity: 1001 Move Inside Cell: 3_0
+[L]# 12:31:32-469  Tid:9 >> Entity: 1001 Move Inside Cell: 3_0
+[L]# 12:31:32-488  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:32-500  Tid:9 >> Entity: 1001 Move Inside Cell: 3_0
+[L]# 12:31:32-509  Tid:8 >> Receive Msg from Client: SendMovePos.
+[L]# 12:31:32-516  Tid:9 >> Entity: 1001 Move Inside Cell: 3_0

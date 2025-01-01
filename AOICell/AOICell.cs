@@ -51,7 +51,29 @@ namespace AOICellSpace
             }
             else if (aOIEntity.EntityOperation == EntityOperationEnum.MoveCross)
             {
-
+                switch (aOIEntity.MoveCrossCellDir)
+                {
+                    case MoveCrossCellDirEnum.Up:
+                        break;
+                    case MoveCrossCellDirEnum.Down:
+                        break;
+                    case MoveCrossCellDirEnum.Left:
+                        break;
+                    case MoveCrossCellDirEnum.Right:
+                        break;
+                    case MoveCrossCellDirEnum.LeftUp:
+                        break;
+                    case MoveCrossCellDirEnum.RightUp:
+                        break;
+                    case MoveCrossCellDirEnum.RightDown:
+                        break;
+                    case MoveCrossCellDirEnum.LeftDown:
+                        break;
+                    case MoveCrossCellDirEnum.None:
+                        break;
+                    default:
+                        break;
+                }
             }
             else
             {

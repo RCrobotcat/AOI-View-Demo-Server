@@ -44,11 +44,11 @@ namespace AOIServer
                         case CMD.LoginRequest:
                             LoginStage(package);
                             break;
-                        case CMD.LoginResponse:
-                            break;
                         case CMD.SendMovePos:
+                            stage.MoveEntity(package.package.sendMovePos);
                             break;
                         case CMD.SendExitStage:
+                            stage.EntityExit(package.package.sendExit.entityID);
                             break;
                         default:
                             break;
@@ -81,7 +81,7 @@ namespace AOIServer
             {
                 entityID = GetEntityUniqueID(),
                 session = package.session,
-                playerPos = new Vector3(10, 0, 10),
+                playerInitPos = new Vector3(10, 0, 10),
                 playerState = PlayerStateEnum.None
             };
 

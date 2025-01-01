@@ -19,8 +19,8 @@ namespace AOIServer
 
         public ServerSession session; // 哪一个session会话来处理连接
 
-        public Vector3 playerTargetDir; // 玩家当前的目标朝向
-        public Vector3 playerPos; // 玩家当前位置
+        public Vector3 playerTargetDirPos; // 玩家当前的目标位置
+        public Vector3 playerInitPos; // 玩家初始位置
 
         public AOIEntity aOIEntity; // 玩家所在的AOI实体(玩家实体对应的AOI实体)
 

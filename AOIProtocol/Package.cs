@@ -10,6 +10,7 @@ namespace AOIProtocol
         LoginRequest,
         LoginResponse,
 
+        NtfCell, // 通知建立Cell宫格
         NtfAOIMsg, // AOI通知消息
 
         SendMovePos, // 发送移动位置
@@ -38,7 +39,10 @@ namespace AOIProtocol
         public LoginRequest loginRequest;
         public LoginResponse loginResponse;
 
+        public NtfCell ntfCell;
         public NtfAOIMsg ntfAOIMsg;
+        public SendMovePos sendMovePos;
+        public SendExit sendExit;
     }
 
     /// <summary>
@@ -119,20 +123,20 @@ namespace AOIProtocol
         public uint entityID;
     }
     [Serializable]
-    public class NtfCell
+    public class NtfCell // 通知建立Cell宫格
     {
         public int xIndex;
         public int zIndex;
     }
     [Serializable]
-    public class SndMovePos
+    public class SendMovePos
     {
         public uint entityID;
         public float PosX;
         public float PosZ;
     }
     [Serializable]
-    public class SndExit
+    public class SendExit
     {
         public uint entityID;
     }
