@@ -3,8 +3,8 @@
   "WorkspaceRootPath": "C:\\Users\\25190\\Desktop\\course\\AOITestProject\\AOIServer\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{0A375A34-4F3A-450C-8FBE-FA058F24D9A1}|AOICell\\AOICell.csproj|c:\\users\\25190\\desktop\\course\\aoitestproject\\aoiserver\\aoicell\\aoicell.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0A375A34-4F3A-450C-8FBE-FA058F24D9A1}|AOICell\\AOICell.csproj|solutionrelative:aoicell\\aoicell.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{0A375A34-4F3A-450C-8FBE-FA058F24D9A1}|AOICell\\AOICell.csproj|c:\\users\\25190\\desktop\\course\\aoitestproject\\aoiserver\\aoicell\\aoimanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0A375A34-4F3A-450C-8FBE-FA058F24D9A1}|AOICell\\AOICell.csproj|solutionrelative:aoicell\\aoimanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0A375A34-4F3A-450C-8FBE-FA058F24D9A1}|AOICell\\AOICell.csproj|c:\\users\\25190\\desktop\\course\\aoitestproject\\aoiserver\\aoicell\\aoientity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -27,16 +27,16 @@
       "RelativeMoniker": "D:0:0:{942A4489-B05F-4B04-9F71-1A13FE04CDEB}|AOIServer\\AOIServer.csproj|solutionrelative:aoiserver\\battleentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0A375A34-4F3A-450C-8FBE-FA058F24D9A1}|AOICell\\AOICell.csproj|c:\\users\\25190\\desktop\\course\\aoitestproject\\aoiserver\\aoicell\\aoimanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0A375A34-4F3A-450C-8FBE-FA058F24D9A1}|AOICell\\AOICell.csproj|solutionrelative:aoicell\\aoimanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{942A4489-B05F-4B04-9F71-1A13FE04CDEB}|AOIServer\\AOIServer.csproj|c:\\users\\25190\\desktop\\course\\aoitestproject\\aoiserver\\aoiserver\\serverroot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{942A4489-B05F-4B04-9F71-1A13FE04CDEB}|AOIServer\\AOIServer.csproj|solutionrelative:aoiserver\\serverroot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{0A375A34-4F3A-450C-8FBE-FA058F24D9A1}|AOICell\\AOICell.csproj|c:\\users\\25190\\desktop\\course\\aoitestproject\\aoiserver\\aoicell\\aoicell.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0A375A34-4F3A-450C-8FBE-FA058F24D9A1}|AOICell\\AOICell.csproj|solutionrelative:aoicell\\aoicell.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{942A4489-B05F-4B04-9F71-1A13FE04CDEB}|AOIServer\\AOIServer.csproj|c:\\users\\25190\\desktop\\course\\aoitestproject\\aoiserver\\aoiserver\\serverstart.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{942A4489-B05F-4B04-9F71-1A13FE04CDEB}|AOIServer\\AOIServer.csproj|solutionrelative:aoiserver\\serverstart.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{942A4489-B05F-4B04-9F71-1A13FE04CDEB}|AOIServer\\AOIServer.csproj|c:\\users\\25190\\desktop\\course\\aoitestproject\\aoiserver\\aoiserver\\serverroot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{942A4489-B05F-4B04-9F71-1A13FE04CDEB}|AOIServer\\AOIServer.csproj|solutionrelative:aoiserver\\serverroot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -46,8 +46,22 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 6,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "AOICell.cs",
+              "DocumentMoniker": "C:\\Users\\25190\\Desktop\\course\\AOITestProject\\AOIServer\\AOICell\\AOICell.cs",
+              "RelativeDocumentMoniker": "AOICell\\AOICell.cs",
+              "ToolTip": "C:\\Users\\25190\\Desktop\\course\\AOITestProject\\AOIServer\\AOICell\\AOICell.cs",
+              "RelativeToolTip": "AOICell\\AOICell.cs",
+              "ViewState": "AgIAACYAAAAAAAAAAAAswDYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-31T05:02:39.312Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
             {
               "$type": "Document",
               "DocumentIndex": 2,
@@ -56,7 +70,7 @@
               "RelativeDocumentMoniker": "AOIServer\\BattleStage.cs",
               "ToolTip": "C:\\Users\\25190\\Desktop\\course\\AOITestProject\\AOIServer\\AOIServer\\BattleStage.cs",
               "RelativeToolTip": "AOIServer\\BattleStage.cs",
-              "ViewState": "AgIAABEAAAAAAAAAAAAvwEwAAABdAAAAAAAAAA==",
+              "ViewState": "AgIAAB0BAAAAAAAAAAAQwKUAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-31T04:53:25.254Z",
               "IsPinned": true,
@@ -70,7 +84,7 @@
               "RelativeDocumentMoniker": "AOIServer\\ServerSession.cs",
               "ToolTip": "C:\\Users\\25190\\Desktop\\course\\AOITestProject\\AOIServer\\AOIServer\\ServerSession.cs",
               "RelativeToolTip": "AOIServer\\ServerSession.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAABYAAAAtAAAAAAAAAA==",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAQwBYAAAAtAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-01-01T04:11:17.81Z",
               "EditorCaption": ""
@@ -83,7 +97,7 @@
               "RelativeDocumentMoniker": "AOIProtocol\\Package.cs",
               "ToolTip": "C:\\Users\\25190\\Desktop\\course\\AOITestProject\\AOIServer\\AOIProtocol\\Package.cs",
               "RelativeToolTip": "AOIProtocol\\Package.cs",
-              "ViewState": "AgIAABkAAAAAAAAAAAAgwCoAAAAZAAAAAAAAAA==",
+              "ViewState": "AgIAACcAAAAAAAAAAAAkwCoAAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-01-01T03:06:48.257Z",
               "EditorCaption": ""
@@ -96,7 +110,7 @@
               "RelativeDocumentMoniker": "AOIServer\\BattleEntity.cs",
               "ToolTip": "C:\\Users\\25190\\Desktop\\course\\AOITestProject\\AOIServer\\AOIServer\\BattleEntity.cs",
               "RelativeToolTip": "AOIServer\\BattleEntity.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAgwBYAAAAvAAAAAAAAAA==",
+              "ViewState": "AgIAADEAAAAAAAAAAAAkwBYAAAAvAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-31T05:20:03.466Z",
               "EditorCaption": ""
@@ -109,7 +123,7 @@
               "RelativeDocumentMoniker": "AOICell\\AOIEntity.cs",
               "ToolTip": "C:\\Users\\25190\\Desktop\\course\\AOITestProject\\AOIServer\\AOICell\\AOIEntity.cs",
               "RelativeToolTip": "AOICell\\AOIEntity.cs",
-              "ViewState": "AgIAAH8AAAAAAAAAAAAwwDsAAAAkAAAAAAAAAA==",
+              "ViewState": "AgIAALIAAAAAAAAAAAAQwFYAAAA1AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-31T05:03:10.715Z",
               "EditorCaption": ""
@@ -117,32 +131,19 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "AOICell.cs",
-              "DocumentMoniker": "C:\\Users\\25190\\Desktop\\course\\AOITestProject\\AOIServer\\AOICell\\AOICell.cs",
-              "RelativeDocumentMoniker": "AOICell\\AOICell.cs",
-              "ToolTip": "C:\\Users\\25190\\Desktop\\course\\AOITestProject\\AOIServer\\AOICell\\AOICell.cs",
-              "RelativeToolTip": "AOICell\\AOICell.cs",
-              "ViewState": "AgIAACUAAAAAAAAAAAAAAC4AAAA8AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-31T05:02:39.312Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
               "Title": "AOIManager.cs",
               "DocumentMoniker": "C:\\Users\\25190\\Desktop\\course\\AOITestProject\\AOIServer\\AOICell\\AOIManager.cs",
               "RelativeDocumentMoniker": "AOICell\\AOIManager.cs",
               "ToolTip": "C:\\Users\\25190\\Desktop\\course\\AOITestProject\\AOIServer\\AOICell\\AOIManager.cs",
               "RelativeToolTip": "AOICell\\AOIManager.cs",
-              "ViewState": "AgIAADgAAAAAAAAAAAAmwEgAAAAWAAAAAAAAAA==",
+              "ViewState": "AgIAAEIBAAAAAAAAAAAkwGMBAAAeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-31T04:57:12.705Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "ServerRoot.cs",
               "DocumentMoniker": "C:\\Users\\25190\\Desktop\\course\\AOITestProject\\AOIServer\\AOIServer\\ServerRoot.cs",
               "RelativeDocumentMoniker": "AOIServer\\ServerRoot.cs",
@@ -150,12 +151,11 @@
               "RelativeToolTip": "AOIServer\\ServerRoot.cs",
               "ViewState": "AgIAAB4AAAAAAAAAAIA+wC8AAAAcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-31T04:52:58.635Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-31T04:52:58.635Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 7,
               "Title": "ServerStart.cs",
               "DocumentMoniker": "C:\\Users\\25190\\Desktop\\course\\AOITestProject\\AOIServer\\AOIServer\\ServerStart.cs",
               "RelativeDocumentMoniker": "AOIServer\\ServerStart.cs",

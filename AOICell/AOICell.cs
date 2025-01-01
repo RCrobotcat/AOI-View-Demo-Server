@@ -12,6 +12,15 @@ namespace AOICellSpace
         public AOICell[] aroundCells = null; // 周围的宫格
         public bool isCalculateBoundaries = false; // 是否已经计算了边界
 
+        public AOICell[] UpCellArr = null; // 上边宫格
+        public AOICell[] DownCellArr = null; // 下边宫格
+        public AOICell[] LeftCellArr = null; // 左边宫格
+        public AOICell[] RightCellArr = null; // 右边宫格
+        public AOICell[] upLeftCellArr = null; // 左上宫格
+        public AOICell[] upRightCellArr = null; // 右上宫格
+        public AOICell[] downRightCellArr = null; // 右下宫格
+        public AOICell[] downLeftCellArr = null; // 左下宫格
+
         public UpdateItem cellUpdateItem; // Cell所有的更新
 
         public HashSet<AOIEntity> aOIEntitiesSet = new HashSet<AOIEntity>(); // 当前宫格内的所有实体
