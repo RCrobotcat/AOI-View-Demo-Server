@@ -61,6 +61,9 @@ namespace AOICellSpace
 
         AOICell[] aroundAddCell = null; // 存量视野周围新增的宫格
 
+        List<AOICell> singleCellToBeRemovedList = new List<AOICell>(5); // 存量视野中要移除的单个宫格列表
+        List<AOICell> singleCellToBeAddedList = new List<AOICell>(5); // 存量视野中要增加的单个宫格列表
+
         private UpdateItem entityUpdateItem; // 更新项
 
         public AOIEntity(uint entityID, AOIManager aoiManager)
@@ -188,6 +191,23 @@ namespace AOICellSpace
             }
 
             aroundAddCell = null;
+        }
+
+        /// <summary>
+        /// 移除宫格视野
+        /// </summary>
+        /// <param name="cell">视野中要移除的宫格</param>
+        public void RemoveCellView(AOICell cell)
+        {
+            singleCellToBeRemovedList.Add(cell);
+        }
+        /// <summary>
+        /// 增加宫格视野
+        /// </summary>
+        /// <param name="cell">视野中要增加的宫格</param>
+        public void AddCellView(AOICell cell)
+        {
+            singleCellToBeAddedList.Add(cell);
         }
     }
 }

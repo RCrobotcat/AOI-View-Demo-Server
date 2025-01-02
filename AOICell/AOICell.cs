@@ -3,6 +3,13 @@
 // AOI单元(宫格)
 namespace AOICellSpace
 {
+    public enum CellOperationEnum
+    {
+        EntityEnter,
+        EntityMove,
+        EntityExit
+    }
+
     public class AOICell
     {
         public int xIndex; // x索引
@@ -63,20 +70,28 @@ namespace AOICellSpace
                 switch (aOIEntity.MoveCrossCellDir)
                 {
                     case MoveCrossCellDirEnum.Up:
+                        StraightMove(UpCellArr, aOIEntity);
                         break;
                     case MoveCrossCellDirEnum.Down:
+                        StraightMove(DownCellArr, aOIEntity);
                         break;
                     case MoveCrossCellDirEnum.Left:
+                        StraightMove(LeftCellArr, aOIEntity);
                         break;
                     case MoveCrossCellDirEnum.Right:
+                        StraightMove(RightCellArr, aOIEntity);
                         break;
                     case MoveCrossCellDirEnum.LeftUp:
+                        SkewMove(upLeftCellArr, aOIEntity);
                         break;
                     case MoveCrossCellDirEnum.RightUp:
+                        SkewMove(upRightCellArr, aOIEntity);
                         break;
                     case MoveCrossCellDirEnum.RightDown:
+                        SkewMove(downRightCellArr, aOIEntity);
                         break;
                     case MoveCrossCellDirEnum.LeftDown:
+                        SkewMove(downLeftCellArr, aOIEntity);
                         break;
                     case MoveCrossCellDirEnum.None:
                         break;
@@ -155,12 +170,57 @@ namespace AOICellSpace
                 cellUpdateItem.Reset();
             }
         }
-    }
 
-    public enum CellOperationEnum
-    {
-        EntityEnter,
-        EntityMove,
-        EntityExit
+        /// <summary>
+        /// 直线移动
+        /// </summary>
+        /// <param name="cellArr">受影响的宫格</param>
+        /// <param name="aOIEntity">哪个实体写入的操作</param>
+        void StraightMove(AOICell[] cellArr, AOIEntity aOIEntity)
+        {
+            for (int i = 0; i < cellArr.Length; i++)
+            {
+                if (i < 3) // 移除视野
+                {
+                    aOIEntity.RemoveCellView(cellArr[i]);
+                    cellArr[i].AddCellOperation(CellOperationEnum.EntityExit, aOIEntity);
+                }
+                else if (i >= 3 && i < 6) // 增加视野
+                {
+                    aOIEntity.AddCellView(cellArr[i]);
+                    cellArr[i].AddCellOperation(CellOperationEnum.EntityEnter, aOIEntity);
+                }
+                else // 移动
+                {
+                    cellArr[i].AddCellOperation(CellOperationEnum.EntityMove, aOIEntity);
+                }
+            }
+        }
+        /// <summary>
+        /// 斜线移动
+        /// </summary>
+        /// <param name="arr">受影响的宫格</param>
+        /// <param name="entity">哪个实体写入的操作</param>
+        void SkewMove(AOICell[] arr, AOIEntity entity)
+        {
+            for (int i = 0; i < arr.Length; i++)
+            {
+                if (i < 5)
+                {
+                    entity.RemoveCellView(arr[i]);
+                    arr[i].AddCellOperation(CellOperationEnum.EntityExit, entity);
+                }
+                else if (i >= 5 && i < 10)
+                {
+                    entity.AddCellView(arr[i]);
+                    arr[i].AddCellOperation(CellOperationEnum.EntityEnter, entity);
+                }
+                else
+                {
+                    arr[i].AddCellOperation(CellOperationEnum.EntityMove, entity);
+                }
+            }
+        }
+
     }
 }
