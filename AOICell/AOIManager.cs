@@ -108,6 +108,14 @@ namespace AOICellSpace
             {
                 AOICell cell = item.Value;
 
+                // 宫格内部实体退出操作
+                if (cell.aOIEntitiesExitSet.Count > 0)
+                {
+                    cell.aOIEntitiesSet.ExceptWith(cell.aOIEntitiesExitSet);
+                    cell.aOIEntitiesExitSet.Clear();
+                }
+
+                // 宫格内部实体进入操作
                 if (cell.aOIEntitiesEnterSet.Count > 0)
                 {
                     cell.aOIEntitiesSet.UnionWith(cell.aOIEntitiesEnterSet);
@@ -131,7 +139,6 @@ namespace AOICellSpace
 
             cell.EnterCell(aOIEntity);
         }
-
         /// <summary>
         /// 在宫格内部移动
         /// </summary>
@@ -144,6 +151,21 @@ namespace AOICellSpace
             else
             {
                 this.Error($"AOICell: {aOIEntity.cellKey} does not exist in aoiCellDic!");
+            }
+        }
+
+        /// <summary>
+        /// 标记要退出宫格的实体(不是真正的退出)
+        /// </summary>
+        public void MarkEntityExitCell(AOIEntity aOIEntity)
+        {
+            if (aoiCellDic.TryGetValue(aOIEntity.cellKey, out AOICell cell))
+            {
+                cell.aOIEntitiesExitSet.Add(aOIEntity);
+            }
+            else
+            {
+                this.Error($"aoiCellDic cannot find cell: {aOIEntity.cellKey}");
             }
         }
 

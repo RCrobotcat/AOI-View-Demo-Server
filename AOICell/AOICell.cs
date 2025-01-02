@@ -1,4 +1,6 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
+using System.Runtime.InteropServices;
 
 // AOI单元(宫格)
 namespace AOICellSpace
@@ -32,6 +34,8 @@ namespace AOICellSpace
 
         public HashSet<AOIEntity> aOIEntitiesSet = new HashSet<AOIEntity>(); // 当前宫格内的所有实体
         public HashSet<AOIEntity> aOIEntitiesEnterSet = new HashSet<AOIEntity>(); // 当前宫格内的所有新进入的实体(缓存)
+        public HashSet<AOIEntity> aOIEntitiesMoveSet = new HashSet<AOIEntity>(); // 当前宫格内的所有移动的实体(缓存)
+        public HashSet<AOIEntity> aOIEntitiesExitSet = new HashSet<AOIEntity>(); // 当前宫格内的所有离开的实体(缓存)
 
         public AOICell(int xIndex, int zIndex, AOIManager aoiManager)
         {
@@ -109,7 +113,11 @@ namespace AOICellSpace
         /// </summary>
         public void MoveInsideCell(AOIEntity aOIEntity)
         {
-
+            aOIEntitiesMoveSet.Add(aOIEntity);
+            for (int i = 0; i < aroundCells.Length; i++)
+            {
+                aroundCells[i].AddCellOperation(CellOperationEnum.EntityMove, aOIEntity);
+            }
         }
 
         /// <summary>
@@ -117,6 +125,7 @@ namespace AOICellSpace
         /// </summary>
         public void ExitCell(AOIEntity aoiEntity)
         {
+            aOIEntitiesExitSet.Add(aoiEntity);
             for (int i = 0; i < aroundCells.Length; i++)
             {
                 aroundCells[i].AddCellOperation(CellOperationEnum.EntityExit, aoiEntity);

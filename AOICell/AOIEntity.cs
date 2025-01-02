@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Runtime.InteropServices;
-using System.Xml;
 
 // AOI实体
 namespace AOICellSpace
@@ -94,6 +92,11 @@ namespace AOICellSpace
                 oldXIndex = xIndex;
                 oldZIndex = zIndex;
                 oldCellKey = cellKey;
+
+                if (cellKey != "")
+                {
+                    aoiManager.MarkEntityExitCell(this);
+                }
 
                 xIndex = _xIndex;
                 zIndex = _zIndex;
