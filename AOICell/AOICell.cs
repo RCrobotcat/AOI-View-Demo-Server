@@ -1,6 +1,4 @@
 ﻿using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.InteropServices;
 
 // AOI单元(宫格)
 namespace AOICellSpace

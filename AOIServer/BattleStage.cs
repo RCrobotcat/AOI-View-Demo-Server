@@ -49,7 +49,26 @@ namespace AOIServer
             aOIManager = new AOIManager(aoiConfig)
             {
                 OnEntityCellViewChange = EntityCellViewChange,
-                OnCellViewEntityOperationCombination = CellViewEntityOperationCombination
+                OnCellViewEntityOperationCombination = CellViewEntityOperationCombination,
+#if DEBUG
+                OnCreateNewCell = (xIndex, zIndex) =>
+                {
+                    Package pkg = new Package
+                    {
+                        cmd = CMD.NtfCell,
+                        ntfCell = new NtfCell
+                        {
+                            xIndex = xIndex,
+                            zIndex = zIndex
+                        }
+                    };
+
+                    foreach (var item in entityDic)
+                    {
+                        item.Value.SendMsg(pkg);
+                    }
+                },
+#endif
             };
 
             this.LogYellow($"Init Stage:{stageID} done!");
@@ -80,6 +99,23 @@ namespace AOIServer
                     if (entityDic.TryAdd(entity.entityID, entity))
                     {
                         entity.OnEnterStage(this);
+
+#if DEBUG
+                        foreach (var item in aOIManager.GetAOICellDic())
+                        {
+                            Package pkg = new Package
+                            {
+                                cmd = CMD.NtfCell,
+                                ntfCell = new NtfCell
+                                {
+                                    xIndex = item.Value.xIndex,
+                                    zIndex = item.Value.zIndex
+                                }
+                            };
+
+                            entity.SendMsg(pkg);
+                        }
+#endif
                     }
                     else
                     {

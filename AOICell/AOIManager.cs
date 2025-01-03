@@ -40,6 +40,7 @@ namespace AOICellSpace
 
         public Action<AOIEntity, UpdateItem> OnEntityCellViewChange; // 实体视野变化回调
         public Action<AOICell, UpdateItem> OnCellViewEntityOperationCombination; // 宫格内视野中实体变化操作合并的回调
+        public Action<int, int> OnCreateNewCell; // 宫格生成回调
 
         public AOIManager(AOIConfig config)
         {
@@ -179,6 +180,8 @@ namespace AOICellSpace
             {
                 cell = new AOICell(aOIEntity.xIndex, aOIEntity.zIndex, this);
                 aoiCellDic.Add(aOIEntity.cellKey, cell);
+
+                OnCreateNewCell?.Invoke(aOIEntity.xIndex, aOIEntity.zIndex);
             }
 
             return cell;
@@ -204,6 +207,7 @@ namespace AOICellSpace
                     {
                         ac = new AOICell(i, j, this);
                         aoiCellDic.Add(key, ac);
+                        OnCreateNewCell?.Invoke(i, j);
                     }
 
                     if (i > xIndex - 2
@@ -243,152 +247,157 @@ namespace AOICellSpace
             {
                 cell.DownCellArr = new AOICell[12];
 
-                cell.DownCellArr[0] = aoiCellDic[$"{xIndex - 1},{zIndex + 2}"];
-                cell.DownCellArr[1] = aoiCellDic[$"{xIndex},{zIndex + 2}"];
-                cell.DownCellArr[2] = aoiCellDic[$"{xIndex + 1},{zIndex + 2}"];
+                cell.DownCellArr[0] = aoiCellDic[$"{xIndex - 1}_{zIndex + 2}"];
+                cell.DownCellArr[1] = aoiCellDic[$"{xIndex}_{zIndex + 2}"];
+                cell.DownCellArr[2] = aoiCellDic[$"{xIndex + 1}_{zIndex + 2}"];
 
-                cell.DownCellArr[3] = aoiCellDic[$"{xIndex - 1},{zIndex - 1}"];
-                cell.DownCellArr[4] = aoiCellDic[$"{xIndex},{zIndex - 1}"];
-                cell.DownCellArr[5] = aoiCellDic[$"{xIndex + 1},{zIndex - 1}"];
+                cell.DownCellArr[3] = aoiCellDic[$"{xIndex - 1}_{zIndex - 1}"];
+                cell.DownCellArr[4] = aoiCellDic[$"{xIndex}_{zIndex - 1}"];
+                cell.DownCellArr[5] = aoiCellDic[$"{xIndex + 1}_{zIndex - 1}"];
 
-                cell.DownCellArr[6] = aoiCellDic[$"{xIndex - 1},{zIndex + 1}"];
-                cell.DownCellArr[7] = aoiCellDic[$"{xIndex},{zIndex + 1}"];
-                cell.DownCellArr[8] = aoiCellDic[$"{xIndex + 1},{zIndex + 1}"];
-                cell.DownCellArr[9] = aoiCellDic[$"{xIndex - 1},{zIndex}"];
-                cell.DownCellArr[10] = aoiCellDic[$"{xIndex},{zIndex}"];
-                cell.DownCellArr[11] = aoiCellDic[$"{xIndex + 1},{zIndex}"];
+                cell.DownCellArr[6] = aoiCellDic[$"{xIndex - 1}_{zIndex + 1}"];
+                cell.DownCellArr[7] = aoiCellDic[$"{xIndex}_{zIndex + 1}"];
+                cell.DownCellArr[8] = aoiCellDic[$"{xIndex + 1}_{zIndex + 1}"];
+                cell.DownCellArr[9] = aoiCellDic[$"{xIndex - 1}_{zIndex}"];
+                cell.DownCellArr[10] = aoiCellDic[$"{xIndex}_{zIndex}"];
+                cell.DownCellArr[11] = aoiCellDic[$"{xIndex + 1}_{zIndex}"];
             }
 
             //左移操作：3:exit，3:enter，6:move
             {
                 cell.LeftCellArr = new AOICell[12];
 
-                cell.LeftCellArr[0] = aoiCellDic[$"{xIndex + 2},{zIndex + 1}"];
-                cell.LeftCellArr[1] = aoiCellDic[$"{xIndex + 2},{zIndex}"];
-                cell.LeftCellArr[2] = aoiCellDic[$"{xIndex + 2},{zIndex - 1}"];
+                cell.LeftCellArr[0] = aoiCellDic[$"{xIndex + 2}_{zIndex + 1}"];
+                cell.LeftCellArr[1] = aoiCellDic[$"{xIndex + 2}_{zIndex}"];
+                cell.LeftCellArr[2] = aoiCellDic[$"{xIndex + 2}_{zIndex - 1}"];
 
-                cell.LeftCellArr[3] = aoiCellDic[$"{xIndex - 1},{zIndex + 1}"];
-                cell.LeftCellArr[4] = aoiCellDic[$"{xIndex - 1},{zIndex}"];
-                cell.LeftCellArr[5] = aoiCellDic[$"{xIndex - 1},{zIndex - 1}"];
+                cell.LeftCellArr[3] = aoiCellDic[$"{xIndex - 1}_{zIndex + 1}"];
+                cell.LeftCellArr[4] = aoiCellDic[$"{xIndex - 1}_{zIndex}"];
+                cell.LeftCellArr[5] = aoiCellDic[$"{xIndex - 1}_{zIndex - 1}"];
 
-                cell.LeftCellArr[6] = aoiCellDic[$"{xIndex},{zIndex + 1}"];
-                cell.LeftCellArr[7] = aoiCellDic[$"{xIndex},{zIndex}"];
-                cell.LeftCellArr[8] = aoiCellDic[$"{xIndex},{zIndex - 1}"];
-                cell.LeftCellArr[9] = aoiCellDic[$"{xIndex + 1},{zIndex + 1}"];
-                cell.LeftCellArr[10] = aoiCellDic[$"{xIndex + 1},{zIndex}"];
-                cell.LeftCellArr[11] = aoiCellDic[$"{xIndex + 1},{zIndex - 1}"];
+                cell.LeftCellArr[6] = aoiCellDic[$"{xIndex}_{zIndex + 1}"];
+                cell.LeftCellArr[7] = aoiCellDic[$"{xIndex}_{zIndex}"];
+                cell.LeftCellArr[8] = aoiCellDic[$"{xIndex}_{zIndex - 1}"];
+                cell.LeftCellArr[9] = aoiCellDic[$"{xIndex + 1}_{zIndex + 1}"];
+                cell.LeftCellArr[10] = aoiCellDic[$"{xIndex + 1}_{zIndex}"];
+                cell.LeftCellArr[11] = aoiCellDic[$"{xIndex + 1}_{zIndex - 1}"];
             }
 
             //右移操作：3:exit，3:enter，6:move
             {
                 cell.RightCellArr = new AOICell[12];
 
-                cell.RightCellArr[0] = aoiCellDic[$"{xIndex - 2},{zIndex + 1}"];
-                cell.RightCellArr[1] = aoiCellDic[$"{xIndex - 2},{zIndex}"];
-                cell.RightCellArr[2] = aoiCellDic[$"{xIndex - 2},{zIndex - 1}"];
+                cell.RightCellArr[0] = aoiCellDic[$"{xIndex - 2}_{zIndex + 1}"];
+                cell.RightCellArr[1] = aoiCellDic[$"{xIndex - 2}_{zIndex}"];
+                cell.RightCellArr[2] = aoiCellDic[$"{xIndex - 2}_{zIndex - 1}"];
 
-                cell.RightCellArr[3] = aoiCellDic[$"{xIndex + 1},{zIndex + 1}"];
-                cell.RightCellArr[4] = aoiCellDic[$"{xIndex + 1},{zIndex}"];
-                cell.RightCellArr[5] = aoiCellDic[$"{xIndex + 1},{zIndex - 1}"];
+                cell.RightCellArr[3] = aoiCellDic[$"{xIndex + 1}_{zIndex + 1}"];
+                cell.RightCellArr[4] = aoiCellDic[$"{xIndex + 1}_{zIndex}"];
+                cell.RightCellArr[5] = aoiCellDic[$"{xIndex + 1}_{zIndex - 1}"];
 
-                cell.RightCellArr[6] = aoiCellDic[$"{xIndex - 1},{zIndex + 1}"];
-                cell.RightCellArr[7] = aoiCellDic[$"{xIndex - 1},{zIndex}"];
-                cell.RightCellArr[8] = aoiCellDic[$"{xIndex - 1},{zIndex - 1}"];
-                cell.RightCellArr[9] = aoiCellDic[$"{xIndex},{zIndex + 1}"];
-                cell.RightCellArr[10] = aoiCellDic[$"{xIndex},{zIndex}"];
-                cell.RightCellArr[11] = aoiCellDic[$"{xIndex},{zIndex - 1}"];
+                cell.RightCellArr[6] = aoiCellDic[$"{xIndex - 1}_{zIndex + 1}"];
+                cell.RightCellArr[7] = aoiCellDic[$"{xIndex - 1}_{zIndex}"];
+                cell.RightCellArr[8] = aoiCellDic[$"{xIndex - 1}_{zIndex - 1}"];
+                cell.RightCellArr[9] = aoiCellDic[$"{xIndex}_{zIndex + 1}"];
+                cell.RightCellArr[10] = aoiCellDic[$"{xIndex}_{zIndex}"];
+                cell.RightCellArr[11] = aoiCellDic[$"{xIndex}_{zIndex - 1}"];
             }
 
             //左上操作：5:exit, 5:enter, 4:move
             {
                 cell.upLeftCellArr = new AOICell[14];
 
-                cell.upLeftCellArr[0] = aoiCellDic[$"{xIndex},{zIndex - 2}"];
-                cell.upLeftCellArr[1] = aoiCellDic[$"{xIndex + 1},{zIndex - 2}"];
-                cell.upLeftCellArr[2] = aoiCellDic[$"{xIndex + 2},{zIndex - 2}"];
-                cell.upLeftCellArr[3] = aoiCellDic[$"{xIndex + 2},{zIndex - 1}"];
-                cell.upLeftCellArr[4] = aoiCellDic[$"{xIndex + 2},{zIndex}"];
+                cell.upLeftCellArr[0] = aoiCellDic[$"{xIndex}_{zIndex - 2}"];
+                cell.upLeftCellArr[1] = aoiCellDic[$"{xIndex + 1}_{zIndex - 2}"];
+                cell.upLeftCellArr[2] = aoiCellDic[$"{xIndex + 2}_{zIndex - 2}"];
+                cell.upLeftCellArr[3] = aoiCellDic[$"{xIndex + 2}_{zIndex - 1}"];
+                cell.upLeftCellArr[4] = aoiCellDic[$"{xIndex + 2}_{zIndex}"];
 
-                cell.upLeftCellArr[5] = aoiCellDic[$"{xIndex - 1},{zIndex - 1}"];
-                cell.upLeftCellArr[6] = aoiCellDic[$"{xIndex - 1},{zIndex}"];
-                cell.upLeftCellArr[7] = aoiCellDic[$"{xIndex - 1},{zIndex + 1}"];
-                cell.upLeftCellArr[8] = aoiCellDic[$"{xIndex},{zIndex + 1}"];
-                cell.upLeftCellArr[9] = aoiCellDic[$"{xIndex + 1},{zIndex + 1}"];
+                cell.upLeftCellArr[5] = aoiCellDic[$"{xIndex - 1}_{zIndex - 1}"];
+                cell.upLeftCellArr[6] = aoiCellDic[$"{xIndex - 1}_{zIndex}"];
+                cell.upLeftCellArr[7] = aoiCellDic[$"{xIndex - 1}_{zIndex + 1}"];
+                cell.upLeftCellArr[8] = aoiCellDic[$"{xIndex}_{zIndex + 1}"];
+                cell.upLeftCellArr[9] = aoiCellDic[$"{xIndex + 1}_{zIndex + 1}"];
 
-                cell.upLeftCellArr[10] = aoiCellDic[$"{xIndex},{zIndex}"];
-                cell.upLeftCellArr[11] = aoiCellDic[$"{xIndex + 1},{zIndex}"];
-                cell.upLeftCellArr[12] = aoiCellDic[$"{xIndex},{zIndex - 1}"];
-                cell.upLeftCellArr[13] = aoiCellDic[$"{xIndex + 1},{zIndex - 1}"];
+                cell.upLeftCellArr[10] = aoiCellDic[$"{xIndex}_{zIndex}"];
+                cell.upLeftCellArr[11] = aoiCellDic[$"{xIndex + 1}_{zIndex}"];
+                cell.upLeftCellArr[12] = aoiCellDic[$"{xIndex}_{zIndex - 1}"];
+                cell.upLeftCellArr[13] = aoiCellDic[$"{xIndex + 1}_{zIndex - 1}"];
             }
 
             //右上操作：5:exit, 5:enter, 4:move
             {
                 cell.upRightCellArr = new AOICell[14];
 
-                cell.upRightCellArr[0] = aoiCellDic[$"{xIndex - 2},{zIndex}"];
-                cell.upRightCellArr[1] = aoiCellDic[$"{xIndex - 2},{zIndex - 1}"];
-                cell.upRightCellArr[2] = aoiCellDic[$"{xIndex - 2},{zIndex - 2}"];
-                cell.upRightCellArr[3] = aoiCellDic[$"{xIndex - 1},{zIndex - 2}"];
-                cell.upRightCellArr[4] = aoiCellDic[$"{xIndex},{zIndex - 2}"];
+                cell.upRightCellArr[0] = aoiCellDic[$"{xIndex - 2}_{zIndex}"];
+                cell.upRightCellArr[1] = aoiCellDic[$"{xIndex - 2}_{zIndex - 1}"];
+                cell.upRightCellArr[2] = aoiCellDic[$"{xIndex - 2}_{zIndex - 2}"];
+                cell.upRightCellArr[3] = aoiCellDic[$"{xIndex - 1}_{zIndex - 2}"];
+                cell.upRightCellArr[4] = aoiCellDic[$"{xIndex}_{zIndex - 2}"];
 
-                cell.upRightCellArr[5] = aoiCellDic[$"{xIndex - 1},{zIndex + 1}"];
-                cell.upRightCellArr[6] = aoiCellDic[$"{xIndex},{zIndex + 1}"];
-                cell.upRightCellArr[7] = aoiCellDic[$"{xIndex + 1},{zIndex + 1}"];
-                cell.upRightCellArr[8] = aoiCellDic[$"{xIndex + 1},{zIndex}"];
-                cell.upRightCellArr[9] = aoiCellDic[$"{xIndex + 1},{zIndex - 1}"];
+                cell.upRightCellArr[5] = aoiCellDic[$"{xIndex - 1}_{zIndex + 1}"];
+                cell.upRightCellArr[6] = aoiCellDic[$"{xIndex}_{zIndex + 1}"];
+                cell.upRightCellArr[7] = aoiCellDic[$"{xIndex + 1}_{zIndex + 1}"];
+                cell.upRightCellArr[8] = aoiCellDic[$"{xIndex + 1}_{zIndex}"];
+                cell.upRightCellArr[9] = aoiCellDic[$"{xIndex + 1}_{zIndex - 1}"];
 
-                cell.upRightCellArr[10] = aoiCellDic[$"{xIndex - 1},{zIndex}"];
-                cell.upRightCellArr[11] = aoiCellDic[$"{xIndex},{zIndex}"];
-                cell.upRightCellArr[12] = aoiCellDic[$"{xIndex - 1},{zIndex - 1}"];
-                cell.upRightCellArr[13] = aoiCellDic[$"{xIndex},{zIndex - 1}"];
+                cell.upRightCellArr[10] = aoiCellDic[$"{xIndex - 1}_{zIndex}"];
+                cell.upRightCellArr[11] = aoiCellDic[$"{xIndex}_{zIndex}"];
+                cell.upRightCellArr[12] = aoiCellDic[$"{xIndex - 1}_{zIndex - 1}"];
+                cell.upRightCellArr[13] = aoiCellDic[$"{xIndex}_{zIndex - 1}"];
             }
 
             //左下操作：5:exit, 5:enter, 4:move
             {
                 cell.downLeftCellArr = new AOICell[14];
 
-                cell.downLeftCellArr[0] = aoiCellDic[$"{xIndex},{zIndex + 2}"];
-                cell.downLeftCellArr[1] = aoiCellDic[$"{xIndex + 1},{zIndex + 2}"];
-                cell.downLeftCellArr[2] = aoiCellDic[$"{xIndex + 2},{zIndex + 2}"];
-                cell.downLeftCellArr[3] = aoiCellDic[$"{xIndex + 2},{zIndex + 1}"];
-                cell.downLeftCellArr[4] = aoiCellDic[$"{xIndex + 2},{zIndex}"];
+                cell.downLeftCellArr[0] = aoiCellDic[$"{xIndex}_{zIndex + 2}"];
+                cell.downLeftCellArr[1] = aoiCellDic[$"{xIndex + 1}_{zIndex + 2}"];
+                cell.downLeftCellArr[2] = aoiCellDic[$"{xIndex + 2}_{zIndex + 2}"];
+                cell.downLeftCellArr[3] = aoiCellDic[$"{xIndex + 2}_{zIndex + 1}"];
+                cell.downLeftCellArr[4] = aoiCellDic[$"{xIndex + 2}_{zIndex}"];
 
-                cell.downLeftCellArr[5] = aoiCellDic[$"{xIndex - 1},{zIndex + 1}"];
-                cell.downLeftCellArr[6] = aoiCellDic[$"{xIndex - 1},{zIndex}"];
-                cell.downLeftCellArr[7] = aoiCellDic[$"{xIndex - 1},{zIndex - 1}"];
-                cell.downLeftCellArr[8] = aoiCellDic[$"{xIndex},{zIndex - 1}"];
-                cell.downLeftCellArr[9] = aoiCellDic[$"{xIndex + 1},{zIndex - 1}"];
+                cell.downLeftCellArr[5] = aoiCellDic[$"{xIndex - 1}_{zIndex + 1}"];
+                cell.downLeftCellArr[6] = aoiCellDic[$"{xIndex - 1}_{zIndex}"];
+                cell.downLeftCellArr[7] = aoiCellDic[$"{xIndex - 1}_{zIndex - 1}"];
+                cell.downLeftCellArr[8] = aoiCellDic[$"{xIndex}_{zIndex - 1}"];
+                cell.downLeftCellArr[9] = aoiCellDic[$"{xIndex + 1}_{zIndex - 1}"];
 
-                cell.downLeftCellArr[10] = aoiCellDic[$"{xIndex},{zIndex + 1}"];
-                cell.downLeftCellArr[11] = aoiCellDic[$"{xIndex + 1},{zIndex + 1}"];
-                cell.downLeftCellArr[12] = aoiCellDic[$"{xIndex},{zIndex}"];
-                cell.downLeftCellArr[13] = aoiCellDic[$"{xIndex + 1},{zIndex}"];
+                cell.downLeftCellArr[10] = aoiCellDic[$"{xIndex}_{zIndex + 1}"];
+                cell.downLeftCellArr[11] = aoiCellDic[$"{xIndex + 1}_{zIndex + 1}"];
+                cell.downLeftCellArr[12] = aoiCellDic[$"{xIndex}_{zIndex}"];
+                cell.downLeftCellArr[13] = aoiCellDic[$"{xIndex + 1}_{zIndex}"];
             }
 
             //右下操作：5:exit, 5:enter, 4:move
             {
                 cell.downRightCellArr = new AOICell[14];
 
-                cell.downRightCellArr[0] = aoiCellDic[$"{xIndex - 2},{zIndex + 2}"];
-                cell.downRightCellArr[1] = aoiCellDic[$"{xIndex - 2},{zIndex + 1}"];
-                cell.downRightCellArr[2] = aoiCellDic[$"{xIndex - 2},{zIndex}"];
-                cell.downRightCellArr[3] = aoiCellDic[$"{xIndex - 1},{zIndex + 2}"];
-                cell.downRightCellArr[4] = aoiCellDic[$"{xIndex},{zIndex + 2}"];
+                cell.downRightCellArr[0] = aoiCellDic[$"{xIndex - 2}_{zIndex + 2}"];
+                cell.downRightCellArr[1] = aoiCellDic[$"{xIndex - 2}_{zIndex + 1}"];
+                cell.downRightCellArr[2] = aoiCellDic[$"{xIndex - 2}_{zIndex}"];
+                cell.downRightCellArr[3] = aoiCellDic[$"{xIndex - 1}_{zIndex + 2}"];
+                cell.downRightCellArr[4] = aoiCellDic[$"{xIndex}_{zIndex + 2}"];
 
-                cell.downRightCellArr[5] = aoiCellDic[$"{xIndex - 1},{zIndex - 1}"];
-                cell.downRightCellArr[6] = aoiCellDic[$"{xIndex},{zIndex - 1}"];
-                cell.downRightCellArr[7] = aoiCellDic[$"{xIndex + 1},{zIndex - 1}"];
-                cell.downRightCellArr[8] = aoiCellDic[$"{xIndex + 1},{zIndex}"];
-                cell.downRightCellArr[9] = aoiCellDic[$"{xIndex + 1},{zIndex + 1}"];
+                cell.downRightCellArr[5] = aoiCellDic[$"{xIndex - 1}_{zIndex - 1}"];
+                cell.downRightCellArr[6] = aoiCellDic[$"{xIndex}_{zIndex - 1}"];
+                cell.downRightCellArr[7] = aoiCellDic[$"{xIndex + 1}_{zIndex - 1}"];
+                cell.downRightCellArr[8] = aoiCellDic[$"{xIndex + 1}_{zIndex}"];
+                cell.downRightCellArr[9] = aoiCellDic[$"{xIndex + 1}_{zIndex + 1}"];
 
-                cell.downRightCellArr[10] = aoiCellDic[$"{xIndex - 1},{zIndex + 1}"];
-                cell.downRightCellArr[11] = aoiCellDic[$"{xIndex},{zIndex + 1}"];
-                cell.downRightCellArr[12] = aoiCellDic[$"{xIndex - 1},{zIndex}"];
-                cell.downRightCellArr[13] = aoiCellDic[$"{xIndex},{zIndex}"];
+                cell.downRightCellArr[10] = aoiCellDic[$"{xIndex - 1}_{zIndex + 1}"];
+                cell.downRightCellArr[11] = aoiCellDic[$"{xIndex}_{zIndex + 1}"];
+                cell.downRightCellArr[12] = aoiCellDic[$"{xIndex - 1}_{zIndex}"];
+                cell.downRightCellArr[13] = aoiCellDic[$"{xIndex}_{zIndex}"];
             }
 
 
             cell.isCalculateBoundaries = true;
+        }
+
+        public Dictionary<string, AOICell> GetAOICellDic()
+        {
+            return aoiCellDic;
         }
     }
 }

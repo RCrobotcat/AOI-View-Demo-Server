@@ -156,7 +156,7 @@ namespace AOICellSpace
             {
                 operationEnum = EntityOperationEnum.MoveInside;
                 moveCrossCellDirEnum = MoveCrossCellDirEnum.None;
-                this.Log($"Entity: {entityID} Move Inside Cell: {cellKey}");
+                // this.Log($"Entity: {entityID} Move Inside Cell: {cellKey}");
                 aoiManager.MoveInsideCell(this);
             }
         }
@@ -185,15 +185,34 @@ namespace AOICellSpace
                         entityUpdateItem.enterItemsList.Add(new EnterItem(e.entityID, e.PoxX, e.PosZ));
                     }
                 }
+            }
 
-                if (!entityUpdateItem.IsEmpty)
+            for (int i = 0; i < singleCellToBeAddedList.Count; i++)
+            {
+                HashSet<AOIEntity> set = singleCellToBeAddedList[i].aOIEntitiesSet;
+                foreach (var e in set)
                 {
-                    aoiManager.OnEntityCellViewChange?.Invoke(this, entityUpdateItem);
-                    entityUpdateItem.Reset();
+                    entityUpdateItem.enterItemsList.Add(new EnterItem(e.entityID, e.posX, e.posZ));
+                }
+            }
+            for (int i = 0; i < singleCellToBeRemovedList.Count; i++)
+            {
+                HashSet<AOIEntity> set = singleCellToBeRemovedList[i].aOIEntitiesSet;
+                foreach (var e in set)
+                {
+                    entityUpdateItem.exitItemsList.Add(new ExitItem(e.entityID));
                 }
             }
 
+            if (!entityUpdateItem.IsEmpty)
+            {
+                aoiManager.OnEntityCellViewChange?.Invoke(this, entityUpdateItem);
+                entityUpdateItem.Reset();
+            }
+
             aroundAddCell = null;
+            singleCellToBeAddedList.Clear();
+            singleCellToBeRemovedList.Clear();
         }
 
         /// <summary>

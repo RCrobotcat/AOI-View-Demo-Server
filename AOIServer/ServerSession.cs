@@ -18,7 +18,7 @@ namespace AOIServer
 
         protected override void OnReceiveMsg(Package msg)
         {
-            this.LogGreen($"Receive Msg from Client: {msg.cmd.ToString()}.");
+            // this.LogGreen($"Receive Msg from Client: {msg.cmd.ToString()}.");
             NetPackage netPackage = new NetPackage(this, msg);
             ServerRoot.Instance.AddMsgPackage(netPackage);
         }
