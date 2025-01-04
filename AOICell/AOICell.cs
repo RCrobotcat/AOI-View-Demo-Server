@@ -35,6 +35,9 @@ namespace AOICellSpace
         public HashSet<AOIEntity> aOIEntitiesMoveSet = new HashSet<AOIEntity>(); // 当前宫格内的所有移动的实体(缓存)
         public HashSet<AOIEntity> aOIEntitiesExitSet = new HashSet<AOIEntity>(); // 当前宫格内的所有离开的实体(缓存)
 
+        public int clientEntityConcernCount = 0; // 客户端中关注这个宫格的实体数量
+        public int serverEntityConcernCount = 0; // 服务器中关注这个宫格的实体数量
+
         public AOICell(int xIndex, int zIndex, AOIManager aoiManager)
         {
             this.xIndex = xIndex;
@@ -140,6 +143,15 @@ namespace AOICellSpace
             switch (cellOperation)
             {
                 case CellOperationEnum.EntityEnter:
+                    if (aoiEntity.EntityDriver == EntityDriverEnum.Client)
+                    {
+                        clientEntityConcernCount++;
+                    }
+                    else
+                    {
+                        serverEntityConcernCount++;
+                    }
+
                     cellUpdateItem.enterItemsList.Add(new EnterItem
                     {
                         id = aoiEntity.entityID,
@@ -156,6 +168,15 @@ namespace AOICellSpace
                     });
                     break;
                 case CellOperationEnum.EntityExit:
+                    if (aoiEntity.EntityDriver == EntityDriverEnum.Client)
+                    {
+                        clientEntityConcernCount--;
+                    }
+                    else
+                    {
+                        serverEntityConcernCount--;
+                    }
+
                     cellUpdateItem.exitItemsList.Add(new ExitItem
                     {
                         id = aoiEntity.entityID
@@ -173,7 +194,8 @@ namespace AOICellSpace
         {
             if (!cellUpdateItem.IsEmpty)
             {
-                aoiManager.OnCellViewEntityOperationCombination?.Invoke(this, cellUpdateItem);
+                if (clientEntityConcernCount > 0 && aOIEntitiesSet.Count > 0)
+                    aoiManager.OnCellViewEntityOperationCombination?.Invoke(this, cellUpdateItem);
                 cellUpdateItem.Reset();
             }
         }
@@ -227,6 +249,11 @@ namespace AOICellSpace
                     arr[i].AddCellOperation(CellOperationEnum.EntityMove, entity);
                 }
             }
+        }
+
+        public override string ToString()
+        {
+            return $"CellName:{xIndex},{zIndex} ExistEntity:{aOIEntitiesSet.Count} ClientConcernEntity:{clientEntityConcernCount} ServerConcernEntity:{serverEntityConcernCount}";
         }
 
     }

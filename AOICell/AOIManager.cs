@@ -59,9 +59,9 @@ namespace AOICellSpace
         /// <param name="entityID">实体ID</param>
         /// <param name="x">位置x</param>
         /// <param name="z">位置z</param>
-        public AOIEntity EnterCell(uint entityID, float x, float z)
+        public AOIEntity EnterCell(uint entityID, float x, float z, EntityDriverEnum driverEnum)
         {
-            AOIEntity aoiEntity = new AOIEntity(entityID, this);
+            AOIEntity aoiEntity = new AOIEntity(entityID, this, driverEnum);
             aoiEntity.UpdatePosition(x, z, EntityOperationEnum.TransferEnter);
             aoiEntityList.Add(aoiEntity);
             return aoiEntity;

@@ -1,5 +1,6 @@
 ﻿using AOICellSpace;
 using AOIProtocol;
+using PENet;
 using System.Collections.Concurrent;
 using System.Numerics;
 
@@ -71,10 +72,15 @@ namespace AOIServer
 #endif
             };
 
+            historyTime = DateTime.Now;
+
             this.LogYellow($"Init Stage:{stageID} done!");
         }
         public void TickStage()
         {
+            if (CheckEntityDicHaveClient())
+                RandomServerEntityAITest(); // 随机服务器实体AI用于测试
+
             // 处理退出关卡队列
             while (operationExitQueue.TryDequeue(out BattleEntity entity))
             {
@@ -93,7 +99,7 @@ namespace AOIServer
             // 处理进入关卡队列
             while (operationEnterQueue.TryDequeue(out BattleEntity entity))
             {
-                entity.aOIEntity = aOIManager.EnterCell(entity.entityID, entity.playerInitPos.X, entity.playerInitPos.Z);
+                entity.aOIEntity = aOIManager.EnterCell(entity.entityID, entity.playerInitPos.X, entity.playerInitPos.Z, entity.driverEnum);
                 if (!entityDic.ContainsKey(entity.entityID))
                 {
                     if (entityDic.TryAdd(entity.entityID, entity))
@@ -305,11 +311,14 @@ namespace AOIServer
                 }
             }
 
+            // 将网络消息包序列化成字节数组
+            byte[] bytesPkg = AsyncTool.PackLenInfo(AsyncTool.Serialize(pkg));
+
             foreach (var e in cell.aOIEntitiesSet)
             {
                 if (entityDic.TryGetValue(e.entityID, out BattleEntity entity))
                 {
-                    entity.OnUpdateStage(pkg);
+                    entity.OnUpdateStage(bytesPkg);
                 }
             }
         }
@@ -335,6 +344,69 @@ namespace AOIServer
             {
                 ExitStage(entity);
             }
+        }
+
+        Random random = new Random();
+        DateTime historyTime;
+        DateTime lastTickTime = DateTime.Now;
+        /// <summary>
+        /// 随机服务器实体AI用于测试
+        /// </summary>
+        void RandomServerEntityAITest()
+        {
+            if (DateTime.Now > lastTickTime.AddSeconds(RegularConfigs.randomChangeDirInterval))
+            {
+                lastTickTime = DateTime.Now;
+
+                foreach (var item in entityDic)
+                {
+                    BattleEntity entity = item.Value;
+                    if (entity.driverEnum == EntityDriverEnum.Server
+                        && random.Next(0, 100) < RegularConfigs.randomChangeDirRate) // 有一定几率改变方向
+                    {
+                        if (Math.Abs(entity.playerTargetDirPos.X) >= RegularConfigs.borderX
+                            || Math.Abs(entity.playerTargetDirPos.Z) >= RegularConfigs.borderZ)
+                        {
+                            float randomX = random.Next(-RegularConfigs.borderX, RegularConfigs.borderX);
+                            float randomZ = random.Next(-RegularConfigs.borderZ, RegularConfigs.borderZ);
+                            entity.playerInitPos = Vector3.Normalize(new Vector3(randomX, 0, randomZ) * 0.9f - entity.playerTargetDirPos);
+                        }
+                        else
+                        {
+                            float randomX = random.Next(-100, 100);
+                            float randomZ = random.Next(-100, 100);
+                            entity.playerInitPos = Vector3.Normalize(new Vector3(randomX == 0 ? 1 : randomX, 0, randomZ == 0 ? 1 : randomZ));
+                        }
+                    }
+                }
+            }
+
+            DateTime now = DateTime.Now;
+            float deltaTime = (float)(now - historyTime).TotalMilliseconds / 1000;
+            historyTime = now;
+            foreach (var item in entityDic)
+            {
+                BattleEntity entity = item.Value;
+                if (entity.driverEnum == EntityDriverEnum.Server)
+                {
+                    entity.playerTargetDirPos += entity.playerInitPos * RegularConfigs.moveSpeed * deltaTime;
+                    UpdateStage(entity);
+                }
+            }
+        }
+        /// <summary>
+        /// 检查实体字典中是否有客户端实体
+        /// </summary>
+        bool CheckEntityDicHaveClient()
+        {
+            foreach (var item in entityDic)
+            {
+                if (item.Value.driverEnum == EntityDriverEnum.Client)
+                {
+                    return true;
+                }
+            }
+            return false;
         }
     }
 }

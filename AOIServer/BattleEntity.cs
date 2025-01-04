@@ -16,6 +16,7 @@ namespace AOIServer
     {
         public uint entityID;
         public PlayerStateEnum playerState; // 玩家当前状态
+        public EntityDriverEnum driverEnum = EntityDriverEnum.None; // 实体驱动类型
 
         public ServerSession session; // 哪一个session会话来处理连接
 
@@ -27,6 +28,10 @@ namespace AOIServer
         public void SendMsg(Package package)
         {
             session?.SendMsg(package);
+        }
+        public void SendMsg(byte[] bytePackage)
+        {
+            session?.SendMsg(bytePackage);
         }
 
         /// <summary>
@@ -46,6 +51,16 @@ namespace AOIServer
             if (playerState == PlayerStateEnum.Online)
             {
                 SendMsg(package);
+            }
+        }
+        /// <summary>
+        /// 当前实体在关卡中更新的回调
+        /// </summary>
+        public void OnUpdateStage(byte[] bytePackage)
+        {
+            if (playerState == PlayerStateEnum.Online)
+            {
+                SendMsg(bytePackage);
             }
         }
 

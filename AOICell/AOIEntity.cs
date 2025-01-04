@@ -26,6 +26,12 @@ namespace AOICellSpace
         RightDown,
         LeftDown
     }
+    public enum EntityDriverEnum
+    {
+        None,
+        Client, // 客户端驱动, 需要计数(计数指有多少个客户端在关注这个宫格)
+        Server // 服务器驱动, 不需要计数
+    }
 
     public class AOIEntity
     {
@@ -57,6 +63,9 @@ namespace AOICellSpace
         private MoveCrossCellDirEnum moveCrossCellDirEnum;
         public MoveCrossCellDirEnum MoveCrossCellDir { get => moveCrossCellDirEnum; }
 
+        private EntityDriverEnum entityDriverEnum;
+        public EntityDriverEnum EntityDriver { get => entityDriverEnum; }
+
         AOICell[] aroundAddCell = null; // 存量视野周围新增的宫格
 
         List<AOICell> singleCellToBeRemovedList = new List<AOICell>(5); // 存量视野中要移除的单个宫格列表
@@ -64,10 +73,11 @@ namespace AOICellSpace
 
         private UpdateItem entityUpdateItem; // 更新项
 
-        public AOIEntity(uint entityID, AOIManager aoiManager)
+        public AOIEntity(uint entityID, AOIManager aoiManager, EntityDriverEnum driverEnum)
         {
             this.entityID = entityID;
             this.aoiManager = aoiManager;
+            this.entityDriverEnum = driverEnum;
 
             entityUpdateItem = new UpdateItem(aoiManager.AOICfg.updateEnterAmount,
                 aoiManager.AOICfg.updateMoveAmount,
@@ -175,39 +185,43 @@ namespace AOICellSpace
         /// </summary>
         public void CalculateEntityCellViewChange()
         {
-            if (aroundAddCell != null)
+            AOICell cell = aoiManager.GetOrCreateCell(this);
+            if (cell.clientEntityConcernCount > 0 && entityDriverEnum == EntityDriverEnum.Client)
             {
-                for (int i = 0; i < aroundAddCell.Length; i++)
+                if (aroundAddCell != null)
                 {
-                    HashSet<AOIEntity> entities = aroundAddCell[i].aOIEntitiesSet;
-                    foreach (var e in entities)
+                    for (int i = 0; i < aroundAddCell.Length; i++)
                     {
-                        entityUpdateItem.enterItemsList.Add(new EnterItem(e.entityID, e.PoxX, e.PosZ));
+                        HashSet<AOIEntity> entities = aroundAddCell[i].aOIEntitiesSet;
+                        foreach (var e in entities)
+                        {
+                            entityUpdateItem.enterItemsList.Add(new EnterItem(e.entityID, e.PoxX, e.PosZ));
+                        }
                     }
                 }
-            }
 
-            for (int i = 0; i < singleCellToBeAddedList.Count; i++)
-            {
-                HashSet<AOIEntity> set = singleCellToBeAddedList[i].aOIEntitiesSet;
-                foreach (var e in set)
+                for (int i = 0; i < singleCellToBeAddedList.Count; i++)
                 {
-                    entityUpdateItem.enterItemsList.Add(new EnterItem(e.entityID, e.posX, e.posZ));
+                    HashSet<AOIEntity> set = singleCellToBeAddedList[i].aOIEntitiesSet;
+                    foreach (var e in set)
+                    {
+                        entityUpdateItem.enterItemsList.Add(new EnterItem(e.entityID, e.posX, e.posZ));
+                    }
                 }
-            }
-            for (int i = 0; i < singleCellToBeRemovedList.Count; i++)
-            {
-                HashSet<AOIEntity> set = singleCellToBeRemovedList[i].aOIEntitiesSet;
-                foreach (var e in set)
+                for (int i = 0; i < singleCellToBeRemovedList.Count; i++)
                 {
-                    entityUpdateItem.exitItemsList.Add(new ExitItem(e.entityID));
+                    HashSet<AOIEntity> set = singleCellToBeRemovedList[i].aOIEntitiesSet;
+                    foreach (var e in set)
+                    {
+                        entityUpdateItem.exitItemsList.Add(new ExitItem(e.entityID));
+                    }
                 }
-            }
 
-            if (!entityUpdateItem.IsEmpty)
-            {
-                aoiManager.OnEntityCellViewChange?.Invoke(this, entityUpdateItem);
-                entityUpdateItem.Reset();
+                if (!entityUpdateItem.IsEmpty)
+                {
+                    aoiManager.OnEntityCellViewChange?.Invoke(this, entityUpdateItem);
+                    entityUpdateItem.Reset();
+                }
             }
 
             aroundAddCell = null;
@@ -221,7 +235,8 @@ namespace AOICellSpace
         /// <param name="cell">视野中要移除的宫格</param>
         public void RemoveCellView(AOICell cell)
         {
-            singleCellToBeRemovedList.Add(cell);
+            if (entityDriverEnum == EntityDriverEnum.Client)
+                singleCellToBeRemovedList.Add(cell);
         }
         /// <summary>
         /// 增加宫格视野
@@ -229,7 +244,8 @@ namespace AOICellSpace
         /// <param name="cell">视野中要增加的宫格</param>
         public void AddCellView(AOICell cell)
         {
-            singleCellToBeAddedList.Add(cell);
+            if (entityDriverEnum == EntityDriverEnum.Client)
+                singleCellToBeAddedList.Add(cell);
         }
     }
 }

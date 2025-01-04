@@ -2,6 +2,7 @@
 using PENet;
 using System.Collections.Concurrent;
 using System.Numerics;
+using AOICellSpace;
 
 // 服务器根节点
 namespace AOIServer
@@ -82,7 +83,8 @@ namespace AOIServer
                 entityID = GetEntityUniqueID(),
                 session = package.session,
                 playerInitPos = new Vector3(10, 0, 10),
-                playerState = PlayerStateEnum.None
+                playerState = PlayerStateEnum.None,
+                driverEnum = EntityDriverEnum.Client
             };
 
             stage.EnterStage(entity);
@@ -97,10 +99,36 @@ namespace AOIServer
             });
         }
 
+        Random random = new Random();
+        /// <summary>
+        /// 创建服务器实体(用于AOI测试)
+        /// </summary>
+        public void CreateServerEntity()
+        {
+            float randomPosX = random.Next(-RegularConfigs.borderX, RegularConfigs.borderX);
+            float randomPosZ = random.Next(-RegularConfigs.borderZ, RegularConfigs.borderZ);
+
+            BattleEntity entity = new BattleEntity
+            {
+                entityID = GetServerUniqueID(),
+                playerTargetDirPos = new Vector3(randomPosX, 0, randomPosZ),
+                playerState = PlayerStateEnum.None,
+                driverEnum = EntityDriverEnum.Server
+            };
+
+            stage.EnterStage(entity);
+        }
+
         uint uid = 1000;
         uint GetEntityUniqueID()
         {
             return ++uid;
+        }
+
+        uint serverUid = 2000;
+        public uint GetServerUniqueID()
+        {
+            return ++serverUid;
         }
     }
 }
